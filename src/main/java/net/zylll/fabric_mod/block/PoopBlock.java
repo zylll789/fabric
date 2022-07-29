@@ -8,7 +8,4 @@ public class PoopBlock extends Block{
         super(settings);
     }
 
-
-    public static void register(){
-    }
 }

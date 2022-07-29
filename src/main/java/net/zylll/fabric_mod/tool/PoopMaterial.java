@@ -7,12 +7,12 @@ import net.zylll.fabric_mod.item.AllItems;
 public class PoopMaterial implements ToolMaterial {
     @Override
     public int getDurability() {
-        return 10;//耐久
+        return 12;//耐久
     }
 
     @Override
     public float getMiningSpeedMultiplier() {
-        return 0;
+        return 2;
     }
 
     @Override
@@ -22,7 +22,7 @@ public class PoopMaterial implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 0;
+        return 2;
     }
 
     @Override

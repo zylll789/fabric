@@ -16,6 +16,7 @@ public class Items {
         register("poop", AllItems.POOP);
         register("poop_block", AllItems.POOP_BLOCK_ITEM);
         register("poop_sword", AllTools.POOP_SWORD);
+        register("poop_axe", AllTools.POOP_AXE);
     }
 
     private static void register(String id, Item item){
