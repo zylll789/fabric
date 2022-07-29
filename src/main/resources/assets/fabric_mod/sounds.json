@@ -1,0 +1,8 @@
+{
+  "poop_sound": {
+    "subtitle": "subtitles.fabric_mod.poop_sound",
+    "sounds": [
+        "fabric_mod:poop_sound"
+    ]
+  }
+}
