@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "fabric_mod:poop"
+    }
+  ],
+  "result": {
+    "item": "minecraft:paper",
+    "experience": 0.1,
+    "cookingtime": 40
+  }
+}

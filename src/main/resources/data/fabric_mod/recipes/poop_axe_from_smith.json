@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:wooden_axe"
+  },
+  "addition": {
+    "item": "fabric_mod:poop"
+  },
+  "result": {
+    "item": "fabric_mod:poop_axe"
+  }
+}
