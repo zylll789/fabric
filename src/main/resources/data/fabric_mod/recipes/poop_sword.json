@@ -1,0 +1,19 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "a  ",
+    "a  ",
+    "b  "
+  ],
+  "key": {
+    "a": {
+      "item": "fabric_mod:poop"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "fabric_mod:poop_sword"
+  }
+}
