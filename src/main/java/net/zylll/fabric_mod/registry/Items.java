@@ -2,7 +2,9 @@ package net.zylll.fabric_mod.registry;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.collection.Pool;
 import net.minecraft.util.registry.Registry;
+import net.zylll.fabric_mod.armor.PoopArmorItem;
 import net.zylll.fabric_mod.item.AllItems;
 import net.zylll.fabric_mod.tool.AllTools;
 
@@ -20,6 +22,10 @@ public class Items {
         register("poop_pickaxe", AllTools.POOP_PICKAXE);
         register("poop_shovel", AllTools.POOP_SHOVEL);
         register("poop_hoe", AllTools.POOP_HOE);
+        register("poop_helmet", PoopArmorItem.POOP_HELMET);
+        register("poop_chest", PoopArmorItem.POOP_CHEST);
+        register("poop_leggings", PoopArmorItem.POOP_LEGGINGS);
+        register("poop_boots", PoopArmorItem.POOP_BOOTS);
     }
 
     private static void register(String id, Item item){
