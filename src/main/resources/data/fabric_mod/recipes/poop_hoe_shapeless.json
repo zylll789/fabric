@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_hoe"
+    },
+    {
+      "item": "fabric_mod:poop"
+    }
+  ],
+  "result": {
+    "item": "fabric_mod:poop_hoe"
+  }
+}

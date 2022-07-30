@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:wooden_shovel"
+    },
+    {
+      "item": "fabric_mod:poop"
+    }
+  ],
+  "result": {
+    "item": "fabric_mod:poop_shovel"
+  }
+}
