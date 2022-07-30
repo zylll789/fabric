@@ -23,7 +23,7 @@ public class Items {
         register("poop_shovel", AllTools.POOP_SHOVEL);
         register("poop_hoe", AllTools.POOP_HOE);
         register("poop_helmet", PoopArmorItem.POOP_HELMET);
-        register("poop_chest", PoopArmorItem.POOP_CHEST);
+        register("poop_chestplate", PoopArmorItem.POOP_CHESTPLATE);
         register("poop_leggings", PoopArmorItem.POOP_LEGGINGS);
         register("poop_boots", PoopArmorItem.POOP_BOOTS);
     }
