@@ -8,9 +8,6 @@ import static net.zylll.fabric_mod.FabricMod.makeID;
 
 public class Blocks {
 
-    public Blocks(){
-    }
-
     public static void register(){
         register("poop_block", AllBlocks.POOP_BLOCK);
     }
