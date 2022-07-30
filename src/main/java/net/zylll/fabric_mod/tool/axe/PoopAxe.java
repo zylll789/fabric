@@ -1,6 +1,8 @@
 package net.zylll.fabric_mod.tool.axe;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
@@ -10,6 +12,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.zylll.fabric_mod.item.AllItems;
 
+import java.util.Random;
+
 public class PoopAxe extends AxeItem {
     public PoopAxe(ToolMaterial material, float attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
@@ -17,7 +21,19 @@ public class PoopAxe extends AxeItem {
 
     @Override
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        state.getBlock().afterBreak(world,(PlayerEntity)miner,pos,state,null, AllItems.POOP_BLOCK_ITEM.getDefaultStack());
+        Random random1 = new Random();
+        if(random1.nextFloat() - 0.9F > 0.0F){
+            ((PlayerEntity)miner).giveItemStack(AllItems.POOP.getDefaultStack());}//10%获得poop
+        Random random2 = new Random();
+        if (random2.nextFloat() - 0.95F > 0.0F){
+            world.breakBlock(getPos(pos, 1), true);
+            world.breakBlock(getPos(pos, -1), true);
+        }//5%破坏上下方块
         return super.postMine(stack, world, state, pos, miner);
+    }
+
+    private BlockPos getPos(BlockPos pos, int y){
+        pos = new BlockPos(pos.getX(), pos.getY() + y, pos.getZ());
+        return pos;
     }
 }

@@ -13,7 +13,7 @@ public class PoopMaterial implements ToolMaterial {
     @Override
     public float getMiningSpeedMultiplier() {
         return 2;
-    }
+    }//挖掘速度
 
     @Override
     public float getAttackDamage() {
@@ -22,8 +22,8 @@ public class PoopMaterial implements ToolMaterial {
 
     @Override
     public int getMiningLevel() {
-        return 2;
-    }
+        return 1;
+    }//挖掘等级(-1
 
     @Override
     public int getEnchantability() {
