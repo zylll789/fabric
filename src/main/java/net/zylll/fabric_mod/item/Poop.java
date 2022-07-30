@@ -31,7 +31,7 @@ public class Poop extends Item {
         tooltip.add(new TranslatableText("item.fabric_mod.poop.tooltip"));
     }
 
-    @Override
+    /*@Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (!world.isClient) {
             double d = user.getX();
@@ -60,5 +60,5 @@ public class Poop extends Item {
             }
         }
         return TypedActionResult.success(user.getStackInHand(hand));
-    }
+    }*/
 }

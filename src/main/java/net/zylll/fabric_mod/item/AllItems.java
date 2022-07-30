@@ -12,7 +12,7 @@ public class AllItems {
     //public static final Class NAME = new Class(new FabricItemSettings().group(ItemGroups.ITEMS));
     public static final Poop POOP =
             new Poop(new FabricItemSettings().group(ItemGroups.ITEMS).food(
-                    new FoodComponent.Builder().hunger(1).meat().snack().saturationModifier(1).statusEffect(
+                    new FoodComponent.Builder().hunger(1).meat().snack().saturationModifier(1f).alwaysEdible().statusEffect(
                             new StatusEffectInstance(StatusEffects.POISON, 20*15, 2),0.9F).build()));
     public static final PoopBlockItem POOP_BLOCK_ITEM = new PoopBlockItem(AllBlocks.POOP_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
 }
