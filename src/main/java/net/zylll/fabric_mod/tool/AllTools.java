@@ -3,6 +3,7 @@ package net.zylll.fabric_mod.tool;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.zylll.fabric_mod.ItemGroups;
 import net.zylll.fabric_mod.tool.axe.PoopAxe;
+import net.zylll.fabric_mod.tool.pickaxe.PoopPickaxe;
 import net.zylll.fabric_mod.tool.weapon.PoopSword;
 
 public class AllTools {
@@ -10,4 +11,5 @@ public class AllTools {
     //
     public static final PoopSword POOP_SWORD = new PoopSword(new PoopMaterial(), 4,-2.0F, new FabricItemSettings().group(ItemGroups.TOOLS));
     public static final PoopAxe POOP_AXE = new PoopAxe(new PoopMaterial(), 5, -3.0F, new FabricItemSettings().group(ItemGroups.TOOLS));
+    public static final PoopPickaxe POOP_PICKAXE = new PoopPickaxe(new PoopMaterial(), 3,-3.0F,new FabricItemSettings().group(ItemGroups.TOOLS));
 }
