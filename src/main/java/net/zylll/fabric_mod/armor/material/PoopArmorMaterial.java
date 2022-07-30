@@ -13,7 +13,7 @@ public class PoopArmorMaterial implements ArmorMaterial {
 
     @Override
     public int getDurability(EquipmentSlot slot) {
-        return 30;//耐久
+        return 3;//持久性
     }
 
     @Override
