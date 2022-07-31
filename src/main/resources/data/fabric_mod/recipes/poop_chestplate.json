@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a a",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "fabric_mod:poop"
+    }
+  },
+  "result": {
+    "item": "fabric_mod:poop_chestplate"
+  }
+}
