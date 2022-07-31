@@ -7,6 +7,7 @@ import static net.zylll.fabric_mod.FabricMod.makeID;
 
 public class Sounds {
     public static SoundEvent POOP_SOUND = register(makeID("poop_sound"));
+    public static SoundEvent POOP_EAT_SOUND = register(makeID("poop_eat_sound"));
 
     public static void register(){}
 

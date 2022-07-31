@@ -2,6 +2,9 @@ package net.zylll.fabric_mod.item;
 
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.EndermiteEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -29,6 +32,24 @@ public class Poop extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(new TranslatableText("item.fabric_mod.poop.tooltip"));
+    }
+
+    @Override
+    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
+        user.dropStack(AllItems.POOP.getDefaultStack());
+        user.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20*10, 3));
+        return super.finishUsing(stack, world, user);
+    }
+
+    @Override
+    public void onCraft(ItemStack stack, World world, PlayerEntity player) {
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20*5, 1));
+        super.onCraft(stack, world, player);
+    }
+
+    @Override
+    public SoundEvent getEatSound() {
+        return Sounds.POOP_EAT_SOUND;
     }
 
     /*@Override

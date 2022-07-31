@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.FoodComponent;
+import net.minecraft.util.Rarity;
 import net.zylll.fabric_mod.ItemGroups;
 import net.zylll.fabric_mod.block.AllBlocks;
 
@@ -13,6 +14,6 @@ public class AllItems {
     public static final Poop POOP =
             new Poop(new FabricItemSettings().group(ItemGroups.ITEMS).food(
                     new FoodComponent.Builder().hunger(1).meat().snack().saturationModifier(1f).alwaysEdible().statusEffect(
-                            new StatusEffectInstance(StatusEffects.POISON, 20*15, 2),0.9F).build()));
+                            new StatusEffectInstance(StatusEffects.POISON, 20*15, 2),0.9F).build()).rarity(Rarity.UNCOMMON));
     public static final PoopBlockItem POOP_BLOCK_ITEM = new PoopBlockItem(AllBlocks.POOP_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
 }

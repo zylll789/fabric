@@ -20,7 +20,7 @@ public class PoopSword extends SwordItem {
 
     @Override
     public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {
-        return true;//创造执剑可破坏方块
+        return miner.isCreative();//创造执剑可破坏方块
     }
 
     @Override
@@ -33,6 +33,10 @@ public class PoopSword extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        Random random = new Random();
+        if(random.nextFloat() > 0.5F){
+            target.dropStack(AllItems.POOP.getDefaultStack());
+        }//50%概率掉poop
         World world = attacker.getWorld();
         world.createExplosion(attacker, attacker.getX(), attacker.getY(), attacker.getZ(), 0.5F, false, Explosion.DestructionType.NONE);
         return super.postHit(stack, target, attacker);//攻击爆炸
