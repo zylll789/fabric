@@ -4,5 +4,12 @@
     "sounds": [
         "fabric_mod:poop_sound"
     ]
+  },
+  "poop_eat_sound": {
+    "subtitle": "subtitle.fabric_mod.poop_eat_sound",
+    "sounds": [
+      "fabric_mod:poop_eat_sound1",
+      "fabric_mod:poop_eat_sound2"
+    ]
   }
 }

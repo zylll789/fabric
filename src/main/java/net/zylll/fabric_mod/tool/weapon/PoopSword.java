@@ -24,14 +24,6 @@ public class PoopSword extends SwordItem {
     }
 
     @Override
-    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
-        Random random = new Random();
-        if(random.nextFloat() - 0.9F > 0.0F){
-        ((PlayerEntity)miner).giveItemStack(AllItems.POOP.getDefaultStack());}
-        return super.postMine(stack, world, state, pos, miner);//10%获得poop
-    }
-
-    @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         Random random = new Random();
         if(random.nextFloat() > 0.5F){
