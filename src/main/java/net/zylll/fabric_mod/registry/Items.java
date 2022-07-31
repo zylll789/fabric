@@ -15,13 +15,18 @@ public class Items {
     public Items(){}
 
     public static void register(){
+        //item
         register("poop", AllItems.POOP);
+        //block item
         register("poop_block", AllItems.POOP_BLOCK_ITEM);
+        register("poop_slab", AllItems.POOP_SLAB_ITEM);
+        //tool
         register("poop_sword", AllTools.POOP_SWORD);
         register("poop_axe", AllTools.POOP_AXE);
         register("poop_pickaxe", AllTools.POOP_PICKAXE);
         register("poop_shovel", AllTools.POOP_SHOVEL);
         register("poop_hoe", AllTools.POOP_HOE);
+        //armor
         register("poop_helmet", PoopArmorItem.POOP_HELMET);
         register("poop_chestplate", PoopArmorItem.POOP_CHESTPLATE);
         register("poop_leggings", PoopArmorItem.POOP_LEGGINGS);
