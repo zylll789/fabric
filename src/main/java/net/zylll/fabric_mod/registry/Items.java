@@ -2,7 +2,6 @@ package net.zylll.fabric_mod.registry;
 
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.util.collection.Pool;
 import net.minecraft.util.registry.Registry;
 import net.zylll.fabric_mod.armor.PoopArmorItem;
 import net.zylll.fabric_mod.item.AllItems;
