@@ -31,14 +31,14 @@ public class TrickBlock extends Block {
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         Item item = player.getMainHandStack().getItem();
-        if (!state.get(COLOR) && item == Items.DIAMOND){
+        if (state.get(COLOR) && item == Items.DIAMOND){
             if (!player.isCreative()){
                 player.getStackInHand(Hand.MAIN_HAND).decrement(1);
             }
             world.setBlockState(pos, state.get(COLOR) ? state.with(COLOR, false) : state.with(COLOR, true));
             return ActionResult.SUCCESS;
         }
-        if (state.get(COLOR) && item == AllItems.POOP){
+        if (!state.get(COLOR) && item == AllItems.POOP){
             if (!player.isCreative()){
                 player.getStackInHand(Hand.MAIN_HAND).decrement(1);
             }

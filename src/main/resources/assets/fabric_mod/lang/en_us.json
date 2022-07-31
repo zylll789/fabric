@@ -11,6 +11,8 @@
   "item.fabric_mod.poop_leggings": "Poop Leggings",
   "item.fabric_mod.poop_boots": "Poop Boots",
   "block.fabric_mod.poop_block": "Poop Block",
+  "block.fabric_mod:poop_slab": "Poop Slab",
+  "block.fabric_mod:trick_block": "Trick Block",
   "itemGroup.fabric_mod.items": "Fabric Mod Items",
   "itemGroup.fabric_mod.blocks": "Fabric Mod Blocks",
   "itemGroup.fabric_mod.tools": "Fabric Mod Tools"

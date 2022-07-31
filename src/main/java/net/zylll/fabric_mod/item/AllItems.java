@@ -17,5 +17,5 @@ public class AllItems {
                             new StatusEffectInstance(StatusEffects.POISON, 20*15, 2),0.9F).build()).rarity(Rarity.UNCOMMON));
     public static final PoopBlockItem POOP_BLOCK_ITEM = new PoopBlockItem(AllBlocks.POOP_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final PoopSlabItem POOP_SLAB_ITEM = new PoopSlabItem(AllBlocks.POOP_SLAB, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final TrickBlockItem TRICK_BLOCK_ITEM = new TrickBlockItem(AllBlocks.TRICK_BLOCK, new FabricItemSettings().group(ItemGroups.ITEMS));
+    public static final TrickBlockItem TRICK_BLOCK_ITEM = new TrickBlockItem(AllBlocks.TRICK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
 }
