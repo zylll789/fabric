@@ -11,6 +11,7 @@ public class Blocks {
     public static void register(){
         register("poop_block", AllBlocks.POOP_BLOCK);
         register("poop_slab", AllBlocks.POOP_SLAB);
+        register("trick_block", AllBlocks.TRICK_BLOCK);
     }
 
     private static void register(String id, Block block){

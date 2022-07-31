@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "color=true": {
+      "model": "fabric_mod:block/poop_block"
+    },
+    "color=false": {
+      "model": "minecraft:block/diamond_block"
+    }
+  }
+}

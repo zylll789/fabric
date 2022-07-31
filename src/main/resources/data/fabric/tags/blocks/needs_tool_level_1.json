@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "fabric_mod:poop_block",
-    "fabric_mod:poop_slab"
+    "fabric_mod:poop_slab",
+    "fabric_mod:trick_block"
   ]
 }

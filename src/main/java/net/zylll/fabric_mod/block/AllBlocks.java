@@ -14,5 +14,7 @@ public class AllBlocks {
     public static final PoopSlab POOP_SLAB = new PoopSlab(FabricBlockSettings.of(Material.SNOW_BLOCK).strength
             (0.2F,0.1F).sounds(BlockSoundGroup.SNOW).jumpVelocityMultiplier
             (0.8F).velocityMultiplier(0.8F).mapColor(MapColor.YELLOW).allowsSpawning(PoopSlab::canSpawn).requiresTool().nonOpaque());
+    public static final TrickBlock TRICK_BLOCK = new TrickBlock(FabricBlockSettings.of(Material.METAL).strength
+            (5.0F, 6.0F).sounds(BlockSoundGroup.METAL).mapColor(MapColor.DIAMOND_BLUE).requiresTool());
 
 }
