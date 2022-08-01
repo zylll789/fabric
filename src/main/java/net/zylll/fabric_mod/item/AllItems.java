@@ -22,4 +22,5 @@ public class AllItems {
     public static final BreakBlockItem BREAK_BLOCK_ITEM = new BreakBlockItem(AllBlocks.BREAK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final PoopContainerItem POOP_CONTAINER_ITEM = new PoopContainerItem(AllBlocks.POOP_CONTAINER, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final ClosestoolItem CLOSESTOOL_ITEM = new ClosestoolItem(AllBlocks.CLOSESTOOL, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final PoopChestItem POOP_CHEST_ITEM = new PoopChestItem(AllBlocks.POOP_CHEST, new FabricItemSettings().group(ItemGroups.BLOCKS));
 }

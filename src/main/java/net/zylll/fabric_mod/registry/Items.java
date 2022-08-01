@@ -1,6 +1,5 @@
 package net.zylll.fabric_mod.registry;
 
-import com.mojang.datafixers.TypeRewriteRule;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.registry.Registry;
@@ -23,6 +22,7 @@ public class Items {
         register("break_block", AllItems.BREAK_BLOCK_ITEM);
         register("poop_container", AllItems.POOP_CONTAINER_ITEM);
         register("closestool", AllItems.CLOSESTOOL_ITEM);
+        register("poop_chest", AllItems.POOP_CHEST_ITEM);
         //tool
         register("poop_sword", AllTools.POOP_SWORD);
         register("poop_axe", AllTools.POOP_AXE);

@@ -20,6 +20,7 @@ public class Blocks {
         register("break_block", AllBlocks.BREAK_BLOCK);
         register("poop_container", AllBlocks.POOP_CONTAINER);
         register("closestool", AllBlocks.CLOSESTOOL);
+        register("poop_chest", AllBlocks.POOP_CHEST);
     }
 
     private static void register(String id, Block block){
