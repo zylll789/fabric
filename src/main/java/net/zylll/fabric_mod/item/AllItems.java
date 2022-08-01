@@ -20,4 +20,5 @@ public class AllItems {
     public static final TrickBlockItem TRICK_BLOCK_ITEM = new TrickBlockItem(AllBlocks.TRICK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final OreChangedBlockItem ORE_CHANGED_BLOCK_ITEM = new OreChangedBlockItem(AllBlocks.ORE_CHANGED_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final BreakBlockItem BREAK_BLOCK_ITEM = new BreakBlockItem(AllBlocks.BREAK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final PoopContainerItem POOP_CONTAINER_ITEM = new PoopContainerItem(AllBlocks.POOP_CONTAINER, new FabricItemSettings().group(ItemGroups.BLOCKS));
 }

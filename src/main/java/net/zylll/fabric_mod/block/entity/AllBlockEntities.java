@@ -5,5 +5,5 @@ import net.minecraft.block.entity.BlockEntityType;
 
 public class AllBlockEntities {
     public static BlockEntityType<BreakEntity> BREAK_ENTITY;
-
+    public static BlockEntityType<PoopContainerEntity> POOP_CONTAINER_ENTITY;
 }

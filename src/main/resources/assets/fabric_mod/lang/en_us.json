@@ -15,6 +15,7 @@
   "block.fabric_mod.trick_block": "Trick Block",
   "block.fabric_mod.ore_changed_block": "Ore Changed Block",
   "block.fabric_mod.break_block": "Break Block",
+  "block.fabric_mod.poop_container": "Poop Container",
   "itemGroup.fabric_mod.items": "Fabric Mod Items",
   "itemGroup.fabric_mod.blocks": "Fabric Mod Blocks",
   "itemGroup.fabric_mod.tools": "Fabric Mod Tools"
