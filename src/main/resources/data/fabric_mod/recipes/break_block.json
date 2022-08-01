@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ccc",
+    "a#a",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:observer"
+    },
+    "b": {
+      "item": "fabric_mod:poop_block"
+    },
+    "c": {
+      "item": "minecraft:barrel"
+    },
+    "#": {
+      "item": "fabric_mod:poop"
+    }
+  },
+  "result": {
+    "item": "fabric_mod:break_block"
+  }
+}

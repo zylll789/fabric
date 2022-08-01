@@ -4,6 +4,7 @@
     "fabric_mod:poop_block",
     "fabric_mod:poop_slab",
     "fabric_mod:trick_block",
-    "fabric_mod:ore_changed_block"
+    "fabric_mod:ore_changed_block",
+    "fabric_mod:break_block"
   ]
 }

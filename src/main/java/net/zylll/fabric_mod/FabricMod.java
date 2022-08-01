@@ -2,10 +2,7 @@ package net.zylll.fabric_mod;
 
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
-import net.zylll.fabric_mod.registry.Blocks;
-import net.zylll.fabric_mod.registry.Fuels;
-import net.zylll.fabric_mod.registry.Items;
-import net.zylll.fabric_mod.registry.Sounds;
+import net.zylll.fabric_mod.registry.*;
 
 public class FabricMod implements ModInitializer {
 
@@ -17,6 +14,7 @@ public class FabricMod implements ModInitializer {
 		Blocks.register();
 		Items.register();
 		Fuels.register();
+		Entities.register();
 	}
 
 	public static Identifier makeID(String id){
