@@ -11,8 +11,6 @@ import static net.zylll.fabric_mod.FabricMod.makeID;
 
 public class Items {
 
-    public Items(){}
-
     public static void register(){
         //item
         register("poop", AllItems.POOP);
