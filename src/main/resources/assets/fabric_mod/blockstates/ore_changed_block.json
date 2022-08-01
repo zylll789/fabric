@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "number=1": {
+      "model": "fabric_mod:block/poop_block"
+    },
+    "number=2": {
+      "model": "minecraft:block/iron_ore"
+    },
+    "number=3": {
+      "model": "minecraft:block/gold_ore"
+    },
+    "number=4": {
+      "model": "minecraft:block/diamond_ore"
+    }
+  }
+}

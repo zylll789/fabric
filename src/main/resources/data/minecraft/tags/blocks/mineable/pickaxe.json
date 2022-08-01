@@ -1,5 +1,6 @@
 {
   "replace": false,
   "values": [
+    "fabric_mod:ore_changed_block"
   ]
 }

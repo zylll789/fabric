@@ -13,6 +13,7 @@
   "block.fabric_mod.poop_block": "雪块（难视",
   "block.fabric_mod.poop_slab": "雪砖",
   "block.fabric_mod.trick_block": "钻雪",
+  "block.fabric_mod.ore_changed_block": "便(变)石",
   "itemGroup.fabric_mod.items": "Fabric Mod 物品",
   "itemGroup.fabric_mod.blocks": "Fabric Mod 方块",
   "itemGroup.fabric_mod.tools": "Fabric Mod 工具"

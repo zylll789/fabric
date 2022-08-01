@@ -18,6 +18,7 @@ public class Items {
         register("poop_block", AllItems.POOP_BLOCK_ITEM);
         register("poop_slab", AllItems.POOP_SLAB_ITEM);
         register("trick_block", AllItems.TRICK_BLOCK_ITEM);
+        register("ore_changed_block", AllItems.ORE_CHANGED_BLOCK_ITEM);
         //tool
         register("poop_sword", AllTools.POOP_SWORD);
         register("poop_axe", AllTools.POOP_AXE);

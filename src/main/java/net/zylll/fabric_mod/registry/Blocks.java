@@ -12,6 +12,7 @@ public class Blocks {
         register("poop_block", AllBlocks.POOP_BLOCK);
         register("poop_slab", AllBlocks.POOP_SLAB);
         register("trick_block", AllBlocks.TRICK_BLOCK);
+        register("ore_changed_block", AllBlocks.ORE_CHANGED_BLOCK);
     }
 
     private static void register(String id, Block block){

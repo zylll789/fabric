@@ -16,5 +16,7 @@ public class AllBlocks {
             (0.8F).velocityMultiplier(0.8F).mapColor(MapColor.YELLOW).allowsSpawning(PoopSlab::canSpawn).requiresTool().nonOpaque());
     public static final TrickBlock TRICK_BLOCK = new TrickBlock(FabricBlockSettings.of(Material.METAL).strength
             (5.0F, 6.0F).sounds(BlockSoundGroup.METAL).mapColor(MapColor.DIAMOND_BLUE).requiresTool());
+    public static final OreChangedBlock ORE_CHANGED_BLOCK = new OreChangedBlock(FabricBlockSettings.of(Material.STONE).strength
+            (1.0F, 1.0F).requiresTool());
 
 }
