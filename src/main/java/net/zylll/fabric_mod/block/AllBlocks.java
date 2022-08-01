@@ -19,6 +19,8 @@ public class AllBlocks {
             (5.0F, 6.0F).sounds(BlockSoundGroup.METAL).mapColor(MapColor.DIAMOND_BLUE).requiresTool());
     public static final OreChangedBlock ORE_CHANGED_BLOCK = new OreChangedBlock(FabricBlockSettings.of(Material.STONE).strength
             (1.0F, 1.0F).requiresTool());
-    public static final BreakBlock BREAK_BLOCK = new BreakBlock(AbstractBlock.Settings.of(Material.STONE).requiresTool());
-    public static final PoopContainer POOP_CONTAINER = new PoopContainer(AbstractBlock.Settings.of(Material.STONE).requiresTool());
+    public static final BreakBlock BREAK_BLOCK = new BreakBlock(AbstractBlock.Settings.of(Material.STONE).strength
+            (2.0F, 1.0F).requiresTool());
+    public static final PoopContainer POOP_CONTAINER = new PoopContainer(AbstractBlock.Settings.of(Material.STONE).strength
+            (2.5F, 0.5F).requiresTool().nonOpaque());
 }

@@ -38,4 +38,10 @@ public class PoopContainerEntity extends BlockEntity {
         super.readNbt(nbt);
         Inventories.readNbt(nbt, itemStacks);
     }
+
+    public void afterBreak(){
+        if (!itemStacks.get(0).isEmpty()){
+            ItemScatterer.spawn(this.getWorld(), this.getPos().getX(), this.getPos().getY(), this.getPos().getZ(), itemStacks.get(0));
+        }
+    }
 }

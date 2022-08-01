@@ -1,14 +1,15 @@
 package net.zylll.fabric_mod.block;
 
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.zylll.fabric_mod.block.entity.PoopContainerEntity;
 import org.jetbrains.annotations.Nullable;
@@ -36,5 +37,25 @@ public class PoopContainer extends BlockWithEntity {
             return ActionResult.SUCCESS;
         }
         return ActionResult.SUCCESS;
+    }
+
+    @Override
+    public void afterBreak(World world, PlayerEntity player, BlockPos pos, BlockState state, @Nullable BlockEntity blockEntity, ItemStack stack) {
+        PoopContainerEntity poopContainerEntity = (PoopContainerEntity) blockEntity;
+        assert poopContainerEntity != null;
+        poopContainerEntity.afterBreak();
+        super.afterBreak(world, player, pos, state, blockEntity, stack);
+    }
+
+    private static final VoxelShape SHAPE = Block.createCuboidShape(1.0,0.0,1.0,14.0,14.0,14.0);
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
+    }
+
+    @Override
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
     }
 }
