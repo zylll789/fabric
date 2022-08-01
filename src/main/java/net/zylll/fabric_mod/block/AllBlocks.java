@@ -23,4 +23,6 @@ public class AllBlocks {
             (2.0F, 1.0F).requiresTool());
     public static final PoopContainer POOP_CONTAINER = new PoopContainer(AbstractBlock.Settings.of(Material.STONE).strength
             (2.5F, 0.5F).requiresTool().nonOpaque());
+    public static final Closestool CLOSESTOOL = new Closestool(FabricBlockSettings.of(Material.SOLID_ORGANIC).strength
+            (1.0F, 1.0F).sounds(BlockSoundGroup.STONE).mapColor(MapColor.OFF_WHITE).nonOpaque());
 }

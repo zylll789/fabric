@@ -16,6 +16,7 @@
   "block.fabric_mod.ore_changed_block": "便(变)石",
   "block.fabric_mod.break_block": "破石(poop",
   "block.fabric_mod.poop_container": "雪容",
+  "block.fabric_mod.closestool": "餐厅",
   "itemGroup.fabric_mod.items": "Fabric Mod 物品",
   "itemGroup.fabric_mod.blocks": "Fabric Mod 方块",
   "itemGroup.fabric_mod.tools": "Fabric Mod 工具"

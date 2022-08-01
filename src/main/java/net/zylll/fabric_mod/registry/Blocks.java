@@ -19,7 +19,7 @@ public class Blocks {
         register("ore_changed_block", AllBlocks.ORE_CHANGED_BLOCK);
         register("break_block", AllBlocks.BREAK_BLOCK);
         register("poop_container", AllBlocks.POOP_CONTAINER);
-
+        register("closestool", AllBlocks.CLOSESTOOL);
     }
 
     private static void register(String id, Block block){

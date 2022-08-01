@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "fabric_mod:block/closestool"
+      }
+    ]
+  }
+}
