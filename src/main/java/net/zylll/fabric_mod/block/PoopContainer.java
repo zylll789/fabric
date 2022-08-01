@@ -47,7 +47,7 @@ public class PoopContainer extends BlockWithEntity {
         super.afterBreak(world, player, pos, state, blockEntity, stack);
     }
 
-    private static final VoxelShape SHAPE = Block.createCuboidShape(1.0,0.0,1.0,14.0,14.0,14.0);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(1.0,0.0,1.0,15.0,14.0,15.0);
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
