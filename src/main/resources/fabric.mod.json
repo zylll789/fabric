@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.zylll.fabric_mod.FabricMod"
+    ],
+    "client": [
+      "net.zylll.fabric_mod.FabricModClient"
     ]
   },
   "mixins": [
