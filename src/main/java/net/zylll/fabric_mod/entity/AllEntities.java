@@ -10,5 +10,5 @@ import static net.zylll.fabric_mod.FabricMod.makeID;
 
 public class AllEntities {
     public static final EntityType<PoopCube> POOP_CUBE = Registry.register(Registry.ENTITY_TYPE, makeID("poop_cube"),
-            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, PoopCube::new).dimensions(EntityDimensions.fixed(0.75F, 0.75F)).build());
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, PoopCube::new).dimensions(EntityDimensions.fixed(0.75F, 0.75F)).build());
 }

@@ -1,5 +1,6 @@
 {
   "item.fabric_mod.poop": "雪（难视",
+  "item.fabric_mod.poop_cube_spawn_egg": "雪块(动 生成蛋",
   "item.fabric_mod.poop.tooltip": "很香啊(bushi",
   "item.fabric_mod.poop_sword": "雪剑",
   "item.fabric_mod.poop_axe": "雪斧",
@@ -18,6 +19,7 @@
   "block.fabric_mod.poop_container": "雪容",
   "block.fabric_mod.closestool": "餐厅",
   "block.fabric_mod.poop_chest": "雪箱",
+  "entity.fabric_mod.poop_cube": "雪块(动",
   "itemGroup.fabric_mod.items": "Fabric Mod 物品",
   "itemGroup.fabric_mod.blocks": "Fabric Mod 方块",
   "itemGroup.fabric_mod.tools": "Fabric Mod 工具"

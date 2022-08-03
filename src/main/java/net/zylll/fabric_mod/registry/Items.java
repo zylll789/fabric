@@ -14,6 +14,8 @@ public class Items {
     public static void register(){
         //item
         register("poop", AllItems.POOP);
+        //entity egg
+        register("poop_cube_spawn_egg", AllItems.POOP_CUBE_SPAWN_EGG);
         //block item
         register("poop_block", AllItems.POOP_BLOCK_ITEM);
         register("poop_slab", AllItems.POOP_SLAB_ITEM);
