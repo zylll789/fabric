@@ -2,7 +2,7 @@ package net.zylll.fabric_mod.tool;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.zylll.fabric_mod.item.AllItems;
+import net.zylll.fabric_mod.registry.Items;
 
 public class PoopMaterial implements ToolMaterial {
     @Override
@@ -32,6 +32,6 @@ public class PoopMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(AllItems.POOP);//修复物品
+        return Ingredient.ofItems(Items.POOP);//修复物品
     }
 }

@@ -9,7 +9,7 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.zylll.fabric_mod.block.AllBlocks;
-import net.zylll.fabric_mod.item.AllItems;
+import net.zylll.fabric_mod.registry.Items;
 
 import java.util.Random;
 
@@ -22,7 +22,7 @@ public class PoopAxe extends AxeItem {
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         Random random1 = new Random();
         if(random1.nextFloat() - 0.9F > 0.0F){
-            ((PlayerEntity)miner).giveItemStack(AllItems.POOP.getDefaultStack());}//10%获得poop
+            ((PlayerEntity)miner).giveItemStack(Items.POOP.getDefaultStack());}//10%获得poop
         Random random2 = new Random();
         if (random2.nextFloat() - 0.95F > 0.0F){
             world.breakBlock(getPos(pos, 1), true);

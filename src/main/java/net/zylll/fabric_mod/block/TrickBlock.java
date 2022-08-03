@@ -12,7 +12,6 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.zylll.fabric_mod.item.AllItems;
 
 public class TrickBlock extends Block {
 
@@ -38,7 +37,7 @@ public class TrickBlock extends Block {
             world.setBlockState(pos, state.get(COLOR) ? state.with(COLOR, false) : state.with(COLOR, true));
             return ActionResult.SUCCESS;
         }
-        if (!state.get(COLOR) && item == AllItems.POOP){
+        if (!state.get(COLOR) && item == net.zylll.fabric_mod.registry.Items.POOP){
             if (!player.isCreative()){
                 player.getStackInHand(Hand.MAIN_HAND).decrement(1);
             }

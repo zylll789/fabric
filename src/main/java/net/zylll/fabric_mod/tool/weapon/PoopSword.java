@@ -9,7 +9,7 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.explosion.Explosion;
-import net.zylll.fabric_mod.item.AllItems;
+import net.zylll.fabric_mod.registry.Items;
 
 import java.util.Random;
 
@@ -27,7 +27,7 @@ public class PoopSword extends SwordItem {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         Random random = new Random();
         if(random.nextFloat() > 0.5F){
-            target.dropStack(AllItems.POOP.getDefaultStack());
+            target.dropStack(Items.POOP.getDefaultStack());
         }//50%概率掉poop
         World world = attacker.getWorld();
         world.createExplosion(attacker, attacker.getX(), attacker.getY(), attacker.getZ(), 0.5F, false, Explosion.DestructionType.NONE);

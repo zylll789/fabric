@@ -10,6 +10,7 @@ public class FabricMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		Fluids.register();
 		Sounds.register();
 		Blocks.register();
 		Items.register();

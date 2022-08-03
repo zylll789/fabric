@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.zylll.fabric_mod.item.AllItems;
+import net.zylll.fabric_mod.registry.Items;
 
 import java.util.Random;
 
@@ -20,7 +20,7 @@ public class PoopHoe extends HoeItem {
     public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
         Random random = new Random();
         if(random.nextFloat() - 0.9F > 0.0F){
-            ((PlayerEntity)miner).giveItemStack(AllItems.POOP.getDefaultStack());}
+            ((PlayerEntity)miner).giveItemStack(Items.POOP.getDefaultStack());}
         return super.postMine(stack, world, state, pos, miner);//10%获得poop
     }
 }

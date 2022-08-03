@@ -1,11 +1,11 @@
 package net.zylll.fabric_mod.registry;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.FluidBlock;
+import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.util.registry.Registry;
 import net.zylll.fabric_mod.block.AllBlocks;
-import org.lwjgl.system.CallbackI;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
 
@@ -21,10 +21,16 @@ public class Blocks {
         register("poop_container", AllBlocks.POOP_CONTAINER);
         register("closestool", AllBlocks.CLOSESTOOL);
         register("poop_chest", AllBlocks.POOP_CHEST);
+        //fluid block
+        AllBlocks.POOP_FLUID = register("poop_fluid", Fluids.STILL_POOP_FLUID);
     }
 
     private static void register(String id, Block block){
         Registry.register(Registry.BLOCK, makeID(id), block);
+    }
+
+    private static Block register(String id, FlowableFluid flowableFluid){
+        return Registry.register(Registry.BLOCK, makeID(id), new FluidBlock(flowableFluid, FabricBlockSettings.copy(net.minecraft.block.Blocks.WATER)));
     }
 
 }

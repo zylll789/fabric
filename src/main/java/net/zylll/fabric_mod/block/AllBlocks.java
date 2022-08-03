@@ -2,6 +2,7 @@ package net.zylll.fabric_mod.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
@@ -27,4 +28,6 @@ public class AllBlocks {
             (1.0F, 1.0F).sounds(BlockSoundGroup.STONE).mapColor(MapColor.OFF_WHITE).nonOpaque());
     public static final PoopChest POOP_CHEST = new PoopChest(FabricBlockSettings.of(Material.WOOD).strength
             (2.5F, 0.5F).sounds(BlockSoundGroup.STONE).mapColor(MapColor.GRAY).requiresTool().nonOpaque());
+    //fluid block
+    public static Block POOP_FLUID;
 }

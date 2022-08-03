@@ -5,7 +5,7 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.zylll.fabric_mod.item.AllItems;
+import net.zylll.fabric_mod.registry.Items;
 
 public class PoopArmorMaterial implements ArmorMaterial {
 
@@ -33,7 +33,7 @@ public class PoopArmorMaterial implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(AllItems.POOP);//修理物品
+        return Ingredient.ofItems(Items.POOP);//修理物品
     }
 
     @Override
