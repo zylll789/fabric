@@ -8,13 +8,16 @@ import net.fabricmc.fabric.api.client.render.fluid.v1.FluidRenderHandlerRegistry
 import net.fabricmc.fabric.api.client.render.fluid.v1.SimpleFluidRenderHandler;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
+import net.zylll.fabric_mod.block.entity.AllBlockEntities;
 import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.entity.model.PoopCubeEntityModel;
 import net.zylll.fabric_mod.entity.randerer.PoopCubeRanderer;
 import net.zylll.fabric_mod.registry.Fluids;
+import net.zylll.fabric_mod.screen.UIBlockScreen;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
 
@@ -24,6 +27,9 @@ public class FabricModClient implements ClientModInitializer{
 
     @Override
     public void onInitializeClient() {
+
+        ScreenRegistry.register(AllBlockEntities.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
+
         EntityRendererRegistry.register(AllEntities.POOP_CUBE, PoopCubeRanderer::new);
         EntityModelLayerRegistry.registerModelLayer(MODEL_POOP_CUBE_LAYER, PoopCubeEntityModel::getTexturedModelData);
 

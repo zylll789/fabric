@@ -2,16 +2,25 @@
   "item.fabric_mod.poop": "Poop",
   "item.fabric_mod.poop_cube_spawn_egg": "Poop Cube Spawn Egg",
   "item.fabric_mod.poop_fluid_bucket": "Poop Fluid Bucket",
+
   "item.fabric_mod.poop.tooltip": "What a smelly thing",
+  "item.fabric_mod.poop_axe.tooltip": "Possibly getting Poop, destroying upper and lower blocks or changing blocks to Poop Block",
+  "item.fabric_mod.poop_hoe.tooltip": "Possibly getting Poop",
+  "item.fabric_mod.poop_pickaxe.tooltip": "Possibly getting Poop or destroying left and right blocks",
+  "item.fabric_mod.poop_shovel.tooltip": "Possibly getting Poop",
+  "item.fabric_mod.poop_sword.tooltip": "Attack explosion, possibly getting Poop",
+
   "item.fabric_mod.poop_sword": "Poop Sword",
   "item.fabric_mod.poop_axe": "Poop Axe",
   "item.fabric_mod.poop_pickaxe": "Poop Pickaxe",
   "item.fabric_mod.poop_shovel": "Poop Shovel",
   "item.fabric_mod.poop_hoe": "Poop Hoe",
+
   "item.fabric_mod.poop_helmet": "Poop Helmet",
   "item.fabric_mod.poop_chestplate": "Poop Chestplate",
   "item.fabric_mod.poop_leggings": "Poop Leggings",
   "item.fabric_mod.poop_boots": "Poop Boots",
+
   "block.fabric_mod.poop_block": "Poop Block",
   "block.fabric_mod.poop_slab": "Poop Slab",
   "block.fabric_mod.trick_block": "Trick Block",
@@ -20,7 +29,10 @@
   "block.fabric_mod.poop_container": "Poop Container",
   "block.fabric_mod.closestool": "Closestool",
   "block.fabric_mod.poop_chest": "Poop Chest",
+  "block.fabric_mod.ui_block": "UI Block",
+
   "entity.fabric_mod.poop_cube": "Poop Cube",
+
   "itemGroup.fabric_mod.items": "Fabric Mod Items",
   "itemGroup.fabric_mod.blocks": "Fabric Mod Blocks",
   "itemGroup.fabric_mod.tools": "Fabric Mod Tools"

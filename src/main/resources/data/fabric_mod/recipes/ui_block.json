@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "fabric_mod:poop_block"
+    },
+    "b": {
+      "item": "minecraft:furnace"
+    }
+  },
+  "result": {
+    "item": "fabric_mod:ui_block"
+  }
+}

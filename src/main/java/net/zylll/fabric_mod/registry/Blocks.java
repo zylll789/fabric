@@ -21,6 +21,7 @@ public class Blocks {
         register("poop_container", AllBlocks.POOP_CONTAINER);
         register("closestool", AllBlocks.CLOSESTOOL);
         register("poop_chest", AllBlocks.POOP_CHEST);
+        register("ui_block", AllBlocks.UI_BLOCK);
         //fluid block
         AllBlocks.POOP_FLUID = register("poop_fluid", Fluids.STILL_POOP_FLUID);
     }

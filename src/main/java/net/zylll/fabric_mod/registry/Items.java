@@ -33,6 +33,7 @@ public class Items {
     public static final PoopContainerItem POOP_CONTAINER_ITEM = new PoopContainerItem(AllBlocks.POOP_CONTAINER, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final ClosestoolItem CLOSESTOOL_ITEM = new ClosestoolItem(AllBlocks.CLOSESTOOL, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final PoopChestItem POOP_CHEST_ITEM = new PoopChestItem(AllBlocks.POOP_CHEST, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final UIBlockItem UI_BLOCK_ITEM = new UIBlockItem(AllBlocks.UI_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     //entity egg item
     public static final Item POOP_CUBE_SPAWN_EGG = new SpawnEggItem(AllEntities.POOP_CUBE, 12885043, 12428647, new FabricItemSettings().group(ItemGroups.ITEMS));
 
@@ -52,6 +53,7 @@ public class Items {
         register("poop_container", POOP_CONTAINER_ITEM);
         register("closestool", CLOSESTOOL_ITEM);
         register("poop_chest", POOP_CHEST_ITEM);
+        register("ui_block", UI_BLOCK_ITEM);
         //tool
         register("poop_sword", AllTools.POOP_SWORD);
         register("poop_axe", AllTools.POOP_AXE);
