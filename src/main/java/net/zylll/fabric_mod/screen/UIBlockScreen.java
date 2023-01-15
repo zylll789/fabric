@@ -13,6 +13,8 @@ public class UIBlockScreen extends HandledScreen<UIBlockScreenHandler> {
 
     private static final Identifier TEXTURE = new Identifier("fabric_mod", "textures/gui/ui_block.png");
 
+
+
     public UIBlockScreen(UIBlockScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, title);
         this.passEvents = false;
@@ -28,6 +30,8 @@ public class UIBlockScreen extends HandledScreen<UIBlockScreenHandler> {
         int x = (this.width - this.backgroundWidth) / 2;
         int y = (this.height - this.backgroundHeight) / 2;
         drawTexture(matrices, x, y, 0, 0, this.backgroundWidth, this.backgroundHeight);
+        int tick = (int)(this.handler.getTick() / 4);
+        drawTexture(matrices, x + 73, y + 24, 176, 3, tick, 2);
     }
 
     @Override

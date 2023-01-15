@@ -2,7 +2,7 @@
   "parent": "block/block",
   "textures": {
     "0": "fabric_mod:block/poop_block",
-    "1": "fabric_mod:block/ui_block_side",
+    "1": "fabric_mod:block/ui_block_side_on",
     "particle": "fabric_mod:block/poop_block"
   },
   "elements": [

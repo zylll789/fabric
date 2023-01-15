@@ -5,6 +5,8 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.zylll.fabric_mod.block.entity.AllBlockEntities;
@@ -12,26 +14,30 @@ import net.zylll.fabric_mod.registry.Items;
 
 public class UIBlockScreenHandler extends ScreenHandler {
 
-    public Inventory inventory;
+    private Inventory inventory;
+    private final PropertyDelegate propertyDelegate;
 
     public UIBlockScreenHandler(int syncId, PlayerInventory inventory){
-        this(syncId, inventory, new SimpleInventory(2));
+        this(syncId, inventory, new SimpleInventory(2), new ArrayPropertyDelegate(1));
     }
 
-    public UIBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory){
+    public UIBlockScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate){
         super(AllBlockEntities.UI_BLOCK_SCREEN_HANDLER, syncId);
         this.inventory = inventory;
+        this.propertyDelegate = propertyDelegate;
+        this.addProperties(propertyDelegate);
         checkSize(inventory, 2);
+        checkDataCount(propertyDelegate, 1);
         this.addSlot(new Slot(this.inventory, 0, 56, 17){
             @Override
             public boolean canInsert(ItemStack stack) {
-                return true;
+                return stack.getItem() == Items.POOP;
             }
         });
         this.addSlot(new Slot(this.inventory, 1, 99, 17){
             @Override
             public boolean canInsert(ItemStack stack) {
-                return stack.getItem() == Items.POOP;
+                return false;
             }
         });
         int i;
@@ -45,6 +51,10 @@ public class UIBlockScreenHandler extends ScreenHandler {
         }
     }
 
+    public int getTick(){
+        return propertyDelegate.get(0);
+    }
+
     @Override
     public boolean canUse(PlayerEntity player) {
         return true;
@@ -54,19 +64,9 @@ public class UIBlockScreenHandler extends ScreenHandler {
     public ItemStack transferSlot(PlayerEntity player, int index) {
         ItemStack itemStack = ItemStack.EMPTY;
         Slot slot = this.slots.get(index);
-        if(slot != null && slot.hasStack()){
+        if(slot.hasStack()){
             ItemStack itemStack2 = slot.getStack();
             itemStack = itemStack2.copy();
-            //ItemStack itemStack3 = this.inventory.getStack(0);
-            //ItemStack itemStack4 = this.inventory.getStack(1);
-            /*if(index == 2){
-                if(!this.insertItem(itemStack2, 3, 39, true)){
-                    return ItemStack.EMPTY;
-                }
-                slot.onQuickTransfer(itemStack2, itemStack);
-            }else if(index == 0 || index == 1 ? !this.insertItem(itemStack2, 3, 39, false) : (itemStack3.isEmpty() || itemStack4.isEmpty() ? !this.insertItem(itemStack2, 3, 39, true) : false)){
-                return ItemStack.EMPTY;
-            }*/
             if (index < this.inventory.size()) {
                 if (!this.insertItem(itemStack2, this.inventory.size(), this.slots.size(), true)) {
                     return ItemStack.EMPTY;

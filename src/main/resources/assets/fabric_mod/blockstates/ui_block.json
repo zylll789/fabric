@@ -1,9 +1,10 @@
 {
   "variants": {
-    "": [
-      {
+    "lit=0": {
         "model": "fabric_mod:block/ui_block"
-      }
-    ]
+      },
+    "lit=1": {
+        "model": "fabric_mod:block/ui_block_on"
+    }
   }
 }
