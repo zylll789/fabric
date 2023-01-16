@@ -21,6 +21,10 @@
   "item.fabric_mod.poop_leggings": "Poop Leggings",
   "item.fabric_mod.poop_boots": "Poop Boots",
 
+  "item.minecraft.potion.effect.epinephrine": "Potion of Epinephrine",
+  "item.minecraft.splash_potion.effect.epinephrine": "Splash Potion of Epinephrine",
+  "item.minecraft.lingering_potion.effect.epinephrine": "Lingering Potion of Epinephrine",
+
   "block.fabric_mod.poop_block": "Poop Block",
   "block.fabric_mod.poop_slab": "Poop Slab",
   "block.fabric_mod.trick_block": "Trick Block",
@@ -37,5 +41,6 @@
   "itemGroup.fabric_mod.blocks": "Fabric Mod Blocks",
   "itemGroup.fabric_mod.tools": "Fabric Mod Tools",
 
-  "effect.fabric_mod.epinephrine_effect": "Epinephrine Effect"
+  "effect.fabric_mod.epinephrine_effect": "Epinephrine Effect",
+  "effect.fabric_mod.explosion_effect": "Explosion Effect"
 }

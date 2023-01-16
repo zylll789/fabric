@@ -15,10 +15,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class BrewingMixin {
 
     @Inject(at = @At("HEAD"), method = "registerDefaults")
-    private static void registerDefaults(CallbackInfo callbackInfo){
+    private static void registerDefaults(CallbackInfo callbackInfo) {
         BrewingMixin.registerPotionRecipe(Potions.AWKWARD, Items.POOP, Potions.POISON);
+        BrewingMixin.registerPotionRecipe(Potions.STRENGTH, Items.POOP, net.zylll.fabric_mod.registry.Potions.EPINEPHRINE);
     }
+
     @Invoker("registerPotionRecipe")
-    public static void registerPotionRecipe(Potion input, Item item, Potion output){
+    public static void registerPotionRecipe(Potion input, Item item, Potion output) {
     }
 }

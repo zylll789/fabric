@@ -21,6 +21,10 @@
   "item.fabric_mod.poop_leggings": "雪裤衩",
   "item.fabric_mod.poop_boots": "雪鞋",
 
+  "item.minecraft.potion.effect.epinephrine": "肾上腺剂",
+  "item.minecraft.splash_potion.effect.epinephrine": "喷溅型肾上腺剂",
+  "item.minecraft.lingering_potion.effect.epinephrine": "滞留型肾上腺剂",
+
   "block.fabric_mod.poop_block": "雪块（难视",
   "block.fabric_mod.poop_slab": "雪砖",
   "block.fabric_mod.trick_block": "钻雪",
@@ -37,5 +41,6 @@
   "itemGroup.fabric_mod.blocks": "Fabric Mod 方块",
   "itemGroup.fabric_mod.tools": "Fabric Mod 工具",
 
-  "effect.fabric_mod.epinephrine_effect": "肾上腺强化"
+  "effect.fabric_mod.epinephrine_effect": "肾上腺强化",
+  "effect.fabric_mod.explosion_effect": "爆炸"
 }
