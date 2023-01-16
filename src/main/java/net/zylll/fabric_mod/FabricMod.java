@@ -18,6 +18,7 @@ public class FabricMod implements ModInitializer {
 		Entities.register();
 		Features.register();
 		Commands.register();
+		Recipes.register();
 	}
 
 	public static Identifier makeID(String id){
