@@ -35,5 +35,7 @@
 
   "itemGroup.fabric_mod.items": "Fabric Mod Items",
   "itemGroup.fabric_mod.blocks": "Fabric Mod Blocks",
-  "itemGroup.fabric_mod.tools": "Fabric Mod Tools"
+  "itemGroup.fabric_mod.tools": "Fabric Mod Tools",
+
+  "effect.fabric_mod.epinephrine_effect": "Epinephrine Effect"
 }

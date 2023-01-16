@@ -17,6 +17,7 @@ public class FabricMod implements ModInitializer {
 		Fuels.register();
 		Entities.register();
 		Features.register();
+		Effects.register();
 		Commands.register();
 		Recipes.register();
 	}

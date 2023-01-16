@@ -35,5 +35,7 @@
 
   "itemGroup.fabric_mod.items": "Fabric Mod 物品",
   "itemGroup.fabric_mod.blocks": "Fabric Mod 方块",
-  "itemGroup.fabric_mod.tools": "Fabric Mod 工具"
+  "itemGroup.fabric_mod.tools": "Fabric Mod 工具",
+
+  "effect.fabric_mod.epinephrine_effect": "肾上腺强化"
 }
