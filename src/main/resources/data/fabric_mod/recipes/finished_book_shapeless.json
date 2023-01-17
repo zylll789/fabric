@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:book"
+    },
+    {
+      "item": "fabric_mod:poop"
+    }
+  ],
+  "result": {
+    "item": "fabric_mod:finished_book",
+    "count": 1
+  }
+}

@@ -36,7 +36,7 @@ public class Poop extends Item {
 
     @Override
     public void onCraft(ItemStack stack, World world, PlayerEntity player) {
-        player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20*5, 1));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 20*5, 2));
         super.onCraft(stack, world, player);
     }
 

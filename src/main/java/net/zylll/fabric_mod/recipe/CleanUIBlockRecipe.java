@@ -29,9 +29,9 @@ public class CleanUIBlockRecipe extends SpecialCraftingRecipe {
             if (!stack.isEmpty()) {
                 if (stack.getItem() == Items.WATER_BUCKET) {
                     list.add(stack);
-                } else if (Objects.equals(stack.getNbt(), net.zylll.fabric_mod.registry.Items.UI_BLOCK_ITEM.getDefaultStack().getNbt())) {
+                } else if (stack.getItem() == net.zylll.fabric_mod.registry.Items.UI_BLOCK_ITEM) {
                     list.add(stack);
-                }
+                } else return false;
             }
         }
         return list.size() == 2;
