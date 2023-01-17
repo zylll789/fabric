@@ -11,7 +11,7 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.zylll.fabric_mod.block.AllBlocks;
+import net.zylll.fabric_mod.registry.Blocks;
 import net.zylll.fabric_mod.registry.Items;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,7 +40,7 @@ public class PoopAxe extends AxeItem {
         }//5%破坏上下方块
         Random random3 = new Random();
         if (random3.nextFloat()<0.1F){
-            world.setBlockState(pos, AllBlocks.POOP_BLOCK.getDefaultState());
+            world.setBlockState(pos, Blocks.POOP_BLOCK.getDefaultState());
         }//10%将挖掘方块变成poop
         return super.postMine(stack, world, state, pos, miner);
     }

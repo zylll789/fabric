@@ -9,7 +9,6 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 import net.zylll.fabric_mod.ItemGroups;
 import net.zylll.fabric_mod.armor.PoopArmorItem;
-import net.zylll.fabric_mod.block.AllBlocks;
 import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.item.*;
 import net.zylll.fabric_mod.tool.AllTools;
@@ -22,26 +21,28 @@ public class Items {
     public static final Poop POOP =
             new Poop(new FabricItemSettings().group(ItemGroups.ITEMS).food(
                     new FoodComponent.Builder().hunger(1).meat().snack().saturationModifier(1f).alwaysEdible().statusEffect(
-                            new StatusEffectInstance(StatusEffects.POISON, 20*15, 2),0.9F).build()).rarity(Rarity.UNCOMMON));
+                            new StatusEffectInstance(StatusEffects.POISON, 20 * 15, 2), 0.9F).build()).rarity(Rarity.UNCOMMON));
     public static Item POOP_FLUID_BUCKET;
+    public static CopyItem COPY_ITEM = new CopyItem(new FabricItemSettings().group(ItemGroups.ITEMS).rarity(Rarity.RARE).maxCount(1));
     //block item
-    public static final PoopBlockItem POOP_BLOCK_ITEM = new PoopBlockItem(AllBlocks.POOP_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final PoopSlabItem POOP_SLAB_ITEM = new PoopSlabItem(AllBlocks.POOP_SLAB, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final TrickBlockItem TRICK_BLOCK_ITEM = new TrickBlockItem(AllBlocks.TRICK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final OreChangedBlockItem ORE_CHANGED_BLOCK_ITEM = new OreChangedBlockItem(AllBlocks.ORE_CHANGED_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final BreakBlockItem BREAK_BLOCK_ITEM = new BreakBlockItem(AllBlocks.BREAK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final PoopContainerItem POOP_CONTAINER_ITEM = new PoopContainerItem(AllBlocks.POOP_CONTAINER, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final ClosestoolItem CLOSESTOOL_ITEM = new ClosestoolItem(AllBlocks.CLOSESTOOL, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final PoopChestItem POOP_CHEST_ITEM = new PoopChestItem(AllBlocks.POOP_CHEST, new FabricItemSettings().group(ItemGroups.BLOCKS));
-    public static final UIBlockItem UI_BLOCK_ITEM = new UIBlockItem(AllBlocks.UI_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final PoopBlockItem POOP_BLOCK_ITEM = new PoopBlockItem(Blocks.POOP_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final PoopSlabItem POOP_SLAB_ITEM = new PoopSlabItem(Blocks.POOP_SLAB, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final TrickBlockItem TRICK_BLOCK_ITEM = new TrickBlockItem(Blocks.TRICK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final OreChangedBlockItem ORE_CHANGED_BLOCK_ITEM = new OreChangedBlockItem(Blocks.ORE_CHANGED_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final BreakBlockItem BREAK_BLOCK_ITEM = new BreakBlockItem(Blocks.BREAK_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final PoopContainerItem POOP_CONTAINER_ITEM = new PoopContainerItem(Blocks.POOP_CONTAINER, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final ClosestoolItem CLOSESTOOL_ITEM = new ClosestoolItem(Blocks.CLOSESTOOL, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final PoopChestItem POOP_CHEST_ITEM = new PoopChestItem(Blocks.POOP_CHEST, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final UIBlockItem UI_BLOCK_ITEM = new UIBlockItem(Blocks.UI_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     //entity egg item
     public static final Item POOP_CUBE_SPAWN_EGG = new SpawnEggItem(AllEntities.POOP_CUBE, 12885043, 12428647, new FabricItemSettings().group(ItemGroups.ITEMS));
 
 
-    public static void register(){
+    public static void register() {
         //item
         register("poop", POOP);
-        POOP_FLUID_BUCKET =  register("poop_fluid_bucket", Fluids.STILL_POOP_FLUID);
+        register("copy_item", COPY_ITEM);
+        POOP_FLUID_BUCKET = register("poop_fluid_bucket", Fluids.STILL_POOP_FLUID);
         //entity egg
         register("poop_cube_spawn_egg", POOP_CUBE_SPAWN_EGG);
         //block item
@@ -67,15 +68,15 @@ public class Items {
         register("poop_boots", PoopArmorItem.POOP_BOOTS);
     }
 
-    private static void register(String id, Item item){
+    private static void register(String id, Item item) {
         Registry.register(Registry.ITEM, makeID(id), item);
     }
 
-    public static void register(String id,BlockItem blockItem){
+    public static void register(String id, BlockItem blockItem) {
         Registry.register(Registry.ITEM, makeID(id), blockItem);
     }
 
-    public static Item register(String id, FlowableFluid flowableFluid){
+    public static Item register(String id, FlowableFluid flowableFluid) {
         return Registry.register(Registry.ITEM, makeID(id), new BucketItem(flowableFluid, new FabricItemSettings().group
                 (ItemGroups.ITEMS).maxCount(1).recipeRemainder(net.minecraft.item.Items.BUCKET)));
     }

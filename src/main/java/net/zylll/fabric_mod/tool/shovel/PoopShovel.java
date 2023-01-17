@@ -1,7 +1,6 @@
 package net.zylll.fabric_mod.tool.shovel;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,7 +10,7 @@ import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.zylll.fabric_mod.block.AllBlocks;
+import net.zylll.fabric_mod.registry.Blocks;
 import net.zylll.fabric_mod.registry.Items;
 import org.jetbrains.annotations.Nullable;
 
@@ -40,15 +39,15 @@ public class PoopShovel extends ShovelItem {
     public ActionResult useOnBlock(ItemUsageContext context) {
         World world = context.getWorld();
         BlockPos pos = context.getBlockPos();
-        if (world.getBlockState(pos)== Blocks.DIRT.getDefaultState()){
-            world.setBlockState(pos, AllBlocks.POOP_BLOCK.getDefaultState());
+        if (world.getBlockState(pos)== net.minecraft.block.Blocks.DIRT.getDefaultState()){
+            world.setBlockState(pos, Blocks.POOP_BLOCK.getDefaultState());
         }
         return super.useOnBlock(context);
     }
 
     @Override
     public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        if(state.getBlock()==AllBlocks.POOP_BLOCK){
+        if(state.getBlock()== Blocks.POOP_BLOCK){
             return 10.0F;//特殊挖掘
         }else {
             return 0.9F;

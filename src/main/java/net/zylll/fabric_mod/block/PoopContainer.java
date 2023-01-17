@@ -15,7 +15,7 @@ import net.zylll.fabric_mod.block.entity.PoopContainerEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class PoopContainer extends BlockWithEntity {
-    protected PoopContainer(Settings settings) {
+    public PoopContainer(Settings settings) {
         super(settings);
     }
 

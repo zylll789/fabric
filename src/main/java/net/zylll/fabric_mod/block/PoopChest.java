@@ -17,7 +17,7 @@ import net.zylll.fabric_mod.block.entity.PoopChestEntity;
 import org.jetbrains.annotations.Nullable;
 
 public class PoopChest extends BlockWithEntity {
-    protected PoopChest(Settings settings) {
+    public PoopChest(Settings settings) {
         super(settings);
     }
 

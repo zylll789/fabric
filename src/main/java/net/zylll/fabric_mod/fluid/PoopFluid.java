@@ -6,7 +6,7 @@ import net.minecraft.fluid.FluidState;
 import net.minecraft.item.Item;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
-import net.zylll.fabric_mod.block.AllBlocks;
+import net.zylll.fabric_mod.registry.Blocks;
 import net.zylll.fabric_mod.registry.Fluids;
 import net.zylll.fabric_mod.registry.Items;
 
@@ -29,7 +29,7 @@ public abstract class PoopFluid extends FabricModFluid{
 
     @Override
     protected BlockState toBlockState(FluidState state) {
-        return AllBlocks.POOP_FLUID.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
+        return Blocks.POOP_FLUID.getDefaultState().with(Properties.LEVEL_15, getBlockStateLevel(state));
     }
 
     public static class Flowing extends PoopFluid{
