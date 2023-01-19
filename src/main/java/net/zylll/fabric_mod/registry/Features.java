@@ -1,22 +1,28 @@
 package net.zylll.fabric_mod.registry;
 
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
+import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
 import net.minecraft.util.registry.RegistryKey;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import net.zylll.fabric_mod.feature.PoopFeature;
 import net.zylll.fabric_mod.feature.SpiralFeature;
+import net.zylll.fabric_mod.feature.featureConfig.PoopFeatureConfig;
 import net.zylll.fabric_mod.world.gen.feature.PoopLake;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.function.Predicate;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
 
@@ -25,7 +31,15 @@ public class Features {
     private static final Feature<SpiralFeature.SpiralFeatureConfig> SPIRAL = new SpiralFeature(SpiralFeature.SpiralFeatureConfig.CODEC);
     //public static final ConfiguredFeature<?, ?> POOP_SPIRAL = SPIRAL.
 
+    public static Feature<PoopFeatureConfig> POOP_FEATURE = new PoopFeature(PoopFeatureConfig.POOP_FEATURE_CONFIG_CODEC);
+    public static ConfiguredFeature<PoopFeatureConfig, PoopFeature> POOP_FEATURE_CONFIG = new ConfiguredFeature<>(
+            (PoopFeature) POOP_FEATURE, new PoopFeatureConfig(makeID("closestool"))
+    );
 
+    public static PlacedFeature POOP_FEATURE_PLACED = new PlacedFeature(RegistryEntry.of(POOP_FEATURE_CONFIG), List.of(SquarePlacementModifier.of()));
+
+
+    //ore
     private static ConfiguredFeature<?, ?> OVERWORLD_POOP_BLOCK_CONFIGURED_FEATURE = new ConfiguredFeature<>(Feature.ORE, new OreFeatureConfig
             (OreConfiguredFeatures.STONE_ORE_REPLACEABLES, Blocks.POOP_BLOCK.getDefaultState(), 9));
     public static PlacedFeature OVERWORLD_POOP_BLOCK_PLACED_FEATURE = new PlacedFeature(RegistryEntry.of
@@ -50,25 +64,26 @@ public class Features {
     public static void register() {
         POOP_LAKE = Registry.register(Registry.FEATURE, makeID("poop_lake"), new PoopLake(LakeFeature.Config.CODEC));
 
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, makeID("overworld_poop_block"), OVERWORLD_POOP_BLOCK_CONFIGURED_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, makeID("overworld_poop_block"), OVERWORLD_POOP_BLOCK_PLACED_FEATURE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.PLACED_FEATURE_KEY, makeID("overworld_poop_block")));
+        register("overworld_poop_block", OVERWORLD_POOP_BLOCK_CONFIGURED_FEATURE, OVERWORLD_POOP_BLOCK_PLACED_FEATURE, BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);
+        register("nether_trick_block", NETHER_TRICK_BLOCK_CONFIGURED_FEATURE, NETHER_TRICK_BLOCK_PLACED_FEATURE, BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
+        register("end_ore_changed_block", END_ORE_CHANGED_BLOCK_CONFIGURED_FEATURE, END_ORE_CHANGED_BLOCK_PLACED_FEATURE, BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES);
 
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, makeID("nether_trick_block"), NETHER_TRICK_BLOCK_CONFIGURED_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, makeID("nether_trick_block"), NETHER_TRICK_BLOCK_PLACED_FEATURE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.PLACED_FEATURE_KEY, makeID("nether_trick_block")));
+        //register("spiral", SPIRAL);
 
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, makeID("end_ore_changed_block"), END_ORE_CHANGED_BLOCK_CONFIGURED_FEATURE);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, makeID("end_ore_changed_block"), END_ORE_CHANGED_BLOCK_PLACED_FEATURE);
-        BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES,
-                RegistryKey.of(Registry.PLACED_FEATURE_KEY, makeID("end_ore_changed_block")));
+        register("poop_feature", POOP_FEATURE, POOP_FEATURE_CONFIG, POOP_FEATURE_PLACED, BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION);
 
-        register("spiral", SPIRAL);
     }
 
-    private static void register(String id, Feature<?> c) {
-        Registry.register(Registry.FEATURE, makeID(id), c);
+    private static void register(String id, Feature<?> f, ConfiguredFeature<?, ?> cf, PlacedFeature p, Predicate<BiomeSelectionContext> selector, GenerationStep.Feature step) {
+        Registry.register(Registry.FEATURE, makeID(id), f);
+        register(id, cf, p, selector, step);
     }
+
+    private static void register(String id, ConfiguredFeature<?, ?> cf, PlacedFeature p, Predicate<BiomeSelectionContext> selector, GenerationStep.Feature step) {
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, makeID(id), cf);
+        Registry.register(BuiltinRegistries.PLACED_FEATURE, makeID(id), p);
+        BiomeModifications.addFeature(selector, step, RegistryKey.of(Registry.PLACED_FEATURE_KEY, makeID(id)));
+
+    }
+
 }
