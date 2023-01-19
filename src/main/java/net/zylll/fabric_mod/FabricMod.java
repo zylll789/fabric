@@ -25,6 +25,7 @@ public class FabricMod implements ModInitializer {
         Effects.register();
         Potions.register();
         Commands.register();
+        Trades.register();
     }
 
     public static Identifier makeID(String id) {
