@@ -21,11 +21,13 @@ public class PoopFeature extends Feature<PoopFeatureConfig> {
 
     @Override
     public boolean generate(FeatureContext<PoopFeatureConfig> context) {
+        Random canSpawn = new Random();
+        if (canSpawn.nextFloat() < 0.95f) return false;
         StructureWorldAccess world = context.getWorld();
         BlockPos pos = context.getOrigin();
         Random random = context.getRandom();
         PoopFeatureConfig config = context.getConfig();
-        int number = random.nextInt(5,15);
+        int number = random.nextInt(5, 15);
         Identifier blockID = config.blockID();
         BlockState state = Registry.BLOCK.get(blockID).getDefaultState();
         if (state == null)

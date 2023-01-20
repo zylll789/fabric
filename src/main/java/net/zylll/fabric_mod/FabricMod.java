@@ -14,6 +14,7 @@ public class FabricMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        Particles.register();
         Fluids.register();
         Sounds.register();
         Blocks.register();

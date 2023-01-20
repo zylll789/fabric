@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.structure.rule.BlockMatchRuleTest;
+import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.registry.RegistryEntry;
@@ -15,6 +16,7 @@ import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
+import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.zylll.fabric_mod.feature.PoopFeature;
 import net.zylll.fabric_mod.feature.SpiralFeature;
 import net.zylll.fabric_mod.feature.featureConfig.PoopFeatureConfig;
@@ -27,15 +29,19 @@ import java.util.function.Predicate;
 import static net.zylll.fabric_mod.FabricMod.makeID;
 
 public class Features {
+
     public static PoopLake POOP_LAKE;
-    private static final Feature<SpiralFeature.SpiralFeatureConfig> SPIRAL = new SpiralFeature(SpiralFeature.SpiralFeatureConfig.CODEC);
-    //public static final ConfiguredFeature<?, ?> POOP_SPIRAL = SPIRAL.
+
+    public static final Feature<SpiralFeature.SpiralFeatureConfig> SPIRAL = new SpiralFeature(SpiralFeature.SpiralFeatureConfig.CODEC);
+    public static final ConfiguredFeature<SpiralFeature.SpiralFeatureConfig, SpiralFeature> SPIRAL_FEATURE_CONFIG = new ConfiguredFeature<>(
+            (SpiralFeature) SPIRAL, new SpiralFeature.SpiralFeatureConfig(makeID("poop_block"))
+    );
+    public static PlacedFeature SPIRAL_FEATURE_PLACED = new PlacedFeature(RegistryEntry.of(SPIRAL_FEATURE_CONFIG), List.of(SquarePlacementModifier.of()));
 
     public static Feature<PoopFeatureConfig> POOP_FEATURE = new PoopFeature(PoopFeatureConfig.POOP_FEATURE_CONFIG_CODEC);
     public static ConfiguredFeature<PoopFeatureConfig, PoopFeature> POOP_FEATURE_CONFIG = new ConfiguredFeature<>(
             (PoopFeature) POOP_FEATURE, new PoopFeatureConfig(makeID("closestool"))
     );
-
     public static PlacedFeature POOP_FEATURE_PLACED = new PlacedFeature(RegistryEntry.of(POOP_FEATURE_CONFIG), List.of(SquarePlacementModifier.of()));
 
 
@@ -68,7 +74,7 @@ public class Features {
         register("nether_trick_block", NETHER_TRICK_BLOCK_CONFIGURED_FEATURE, NETHER_TRICK_BLOCK_PLACED_FEATURE, BiomeSelectors.foundInTheNether(), GenerationStep.Feature.UNDERGROUND_ORES);
         register("end_ore_changed_block", END_ORE_CHANGED_BLOCK_CONFIGURED_FEATURE, END_ORE_CHANGED_BLOCK_PLACED_FEATURE, BiomeSelectors.foundInTheEnd(), GenerationStep.Feature.UNDERGROUND_ORES);
 
-        //register("spiral", SPIRAL);
+        register("spiral_feature", SPIRAL, SPIRAL_FEATURE_CONFIG, SPIRAL_FEATURE_PLACED, BiomeSelectors.categories(Biome.Category.DESERT), GenerationStep.Feature.VEGETAL_DECORATION);
 
         register("poop_feature", POOP_FEATURE, POOP_FEATURE_CONFIG, POOP_FEATURE_PLACED, BiomeSelectors.categories(Biome.Category.PLAINS), GenerationStep.Feature.VEGETAL_DECORATION);
 

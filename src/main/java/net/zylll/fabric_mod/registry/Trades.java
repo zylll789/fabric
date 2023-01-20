@@ -29,7 +29,8 @@ public class Trades {
             itemStack.setNbt(nbtCompound);
             Random random1 = new Random();
             Random random2 = new Random();
-            factories.add((entity, random) -> new TradeOffer(new ItemStack(net.minecraft.item.Items.EMERALD, random1.nextInt(3, 6)), itemStack, 1, random2.nextInt(1, 4),0));
+            factories.add((entity, random) -> new TradeOffer(
+                    new ItemStack(net.minecraft.item.Items.EMERALD, random1.nextInt(3, 6)), itemStack, 1, random2.nextInt(1, 4), 0));
         });
     }
 }
