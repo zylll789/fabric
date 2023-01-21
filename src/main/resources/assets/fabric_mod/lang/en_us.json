@@ -47,5 +47,12 @@
   "itemGroup.fabric_mod.tools": "Fabric Mod Tools",
 
   "effect.fabric_mod.epinephrine_effect": "Epinephrine Effect",
-  "effect.fabric_mod.explosion_effect": "Explosion Effect"
+  "effect.fabric_mod.explosion_effect": "Explosion Effect",
+
+  "advancements.poop_world.root.title": "Poop!",
+  "advancements.poop_world.root.description": "Start with a Poop",
+  "advancements.poop_world.get_poop_block.title": "Big Poop?",
+  "advancements.poop_world.get_poop_block.description": "Get a Poop Block",
+  "advancements.poop_world.eat_poop.title": "Tasty",
+  "advancements.poop_world.eat_poop.description": "Get a Closestool and eat a Poop"
 }

@@ -1,0 +1,38 @@
+{
+  "display": {
+    "icon": {
+      "item": "fabric_mod:poop"
+    },
+    "title": {
+      "translate": "advancements.poop_world.root.title"
+    },
+    "description": {
+      "translate": "advancements.poop_world.root.description"
+    },
+    "background": "fabric_mod:textures/gui/advancements/backgrounds/poop_advancement.png",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fabric_mod:poop"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["get"]
+  ],
+  "rewards": {
+    "experience": 1
+  }
+}

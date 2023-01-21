@@ -1,0 +1,49 @@
+{
+  "parent": "fabric_mod:poop_world/root",
+  "display": {
+    "icon": {
+      "item": "fabric_mod:closestool"
+    },
+    "title": {
+      "translate": "advancements.poop_world.eat_poop.title"
+    },
+    "description": {
+      "translate": "advancements.poop_world.eat_poop.description"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "eat": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "items": {
+          "items": [
+            "fabric_mod:poop"
+          ]
+        }
+      }
+    },
+    "get": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fabric_mod:closestool"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["get"],
+    ["eat"]
+  ],
+  "rewards": {
+    "experience": 3
+  }
+}

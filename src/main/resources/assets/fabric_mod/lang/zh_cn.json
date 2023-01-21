@@ -47,5 +47,12 @@
   "itemGroup.fabric_mod.tools": "Fabric Mod 工具",
 
   "effect.fabric_mod.epinephrine_effect": "肾上腺强化",
-  "effect.fabric_mod.explosion_effect": "爆炸"
+  "effect.fabric_mod.explosion_effect": "爆炸",
+
+  "advancements.poop_world.root.title": "臭！",
+  "advancements.poop_world.root.description": "从臭物品开始",
+  "advancements.poop_world.get_poop_block.title": "一大坨？",
+  "advancements.poop_world.get_poop_block.description": "获得一个臭方块",
+  "advancements.poop_world.eat_poop.title": "香",
+  "advancements.poop_world.eat_poop.description": "获得马桶并食用臭物品"
 }

@@ -1,0 +1,38 @@
+{
+  "parent": "fabric_mod:poop_world/root",
+  "display": {
+    "icon": {
+      "item": "fabric_mod:poop_block"
+    },
+    "title": {
+      "translate": "advancements.poop_world.get_poop_block.title"
+    },
+    "description": {
+      "translate": "advancements.poop_world.get_poop_block.description"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "get": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fabric_mod:poop_block"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    ["get"]
+  ],
+  "rewards": {
+    "experience": 2
+  }
+}
