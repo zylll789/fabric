@@ -5,6 +5,8 @@
   "item.fabric_mod.copy_item": "Copy Item",
   "item.fabric_mod.finished_book": "Finished Book",
   "item.fabric_mod.silk_bag": "Silk Bag",
+  "item.fabric_mod.poop_sound_disc": "Poop Sound Disc",
+  "item.fabric_mod.poop_sound_disc.desc": "Poop Sound",
 
   "item.fabric_mod.poop.tooltip": "What a smelly thing",
   "item.fabric_mod.poop_axe.tooltip": "Possibly getting Poop, destroying upper and lower blocks or changing blocks to Poop Block",

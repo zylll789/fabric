@@ -26,6 +26,7 @@ public class Items {
     public static CopyItem COPY_ITEM = new CopyItem(new FabricItemSettings().group(ItemGroups.ITEMS).rarity(Rarity.RARE).maxCount(1));
     public static FinishedBookItem FINISHED_BOOK_ITEM = new FinishedBookItem(new FabricItemSettings().group(ItemGroups.ITEMS).maxCount(1));
     public static SilkBag SILK_BAG = new SilkBag(new FabricItemSettings().group(ItemGroups.ITEMS).maxCount(1));
+    public static final MusicDisc DISC_POOP_SOUND = new MusicDisc(3, Sounds.POOP_SOUND, new FabricItemSettings().group(ItemGroups.ITEMS));
     //block item
     public static final PoopBlockItem POOP_BLOCK_ITEM = new PoopBlockItem(Blocks.POOP_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final PoopSlabItem POOP_SLAB_ITEM = new PoopSlabItem(Blocks.POOP_SLAB, new FabricItemSettings().group(ItemGroups.BLOCKS));
@@ -44,8 +45,9 @@ public class Items {
         //item
         register("poop", POOP);
         register("copy_item", COPY_ITEM);
-        register("finished_book",FINISHED_BOOK_ITEM);
-        register("silk_bag",SILK_BAG);
+        register("finished_book", FINISHED_BOOK_ITEM);
+        register("silk_bag", SILK_BAG);
+        register("poop_sound_disc", DISC_POOP_SOUND);
         POOP_FLUID_BUCKET = register("poop_fluid_bucket", Fluids.STILL_POOP_FLUID);
         //entity egg
         register("poop_cube_spawn_egg", POOP_CUBE_SPAWN_EGG);

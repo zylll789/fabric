@@ -5,6 +5,8 @@
   "item.fabric_mod.copy_item": "复制卷轴 ",
   "item.fabric_mod.finished_book": "成书",
   "item.fabric_mod.silk_bag": "储物袋",
+  "item.fabric_mod.poop_sound_disc": "臭唱片",
+  "item.fabric_mod.poop_sound_disc.desc": "臭",
 
   "item.fabric_mod.poop.tooltip": "很香啊(bushi",
   "item.fabric_mod.poop_axe.tooltip": "概率获得雪，破坏上下方块或变方块为雪块",
