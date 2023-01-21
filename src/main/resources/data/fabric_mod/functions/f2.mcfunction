@@ -1,0 +1,1 @@
+give @a minecraft:diamond{"display":{"Name":'{"text":"~~~"}'}}

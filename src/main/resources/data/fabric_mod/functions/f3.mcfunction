@@ -1,0 +1,1 @@
+give @a minecraft:redstone{"display":{"Name":'{"text":"~~~"}'}}
