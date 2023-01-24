@@ -8,6 +8,7 @@
   "item.fabric_mod.poop_sound_disc": "臭唱片",
   "item.fabric_mod.poop_sound_disc.desc": "臭",
   "item.fabric_mod.dowsing_rod": "寻矿杖",
+  "item.fabric_mod.poop_crop_seed": "臭种子",
 
   "item.fabric_mod.poop.tooltip": "很香啊(bushi",
   "item.fabric_mod.poop_axe.tooltip1": "概率获得雪，",
@@ -47,6 +48,8 @@
 
   "block.fabric_mod.poop_flower": "臭花",
   "block.fabric_mod.potted_poop_flower": "盆栽臭花",
+
+  "block.fabric_mod.poop_crop": "臭植物",
 
   "entity.fabric_mod.poop_cube": "雪块(动",
 

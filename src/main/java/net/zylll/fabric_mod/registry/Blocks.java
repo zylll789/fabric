@@ -40,6 +40,8 @@ public class Blocks {
     public static final PoopGlass POOP_GLASS = new PoopGlass(FabricBlockSettings.copy(net.minecraft.block.Blocks.GLASS)
             .strength(3.0f).nonOpaque());
 
+    //crop
+    public static final PoopCrop POOP_CROP = new PoopCrop(FabricBlockSettings.copy(net.minecraft.block.Blocks.WHEAT).nonOpaque());
     //flower
     public static final PoopFlower POOP_FLOWER = new PoopFlower(StatusEffects.NAUSEA, 12,
             FabricBlockSettings.copy(net.minecraft.block.Blocks.DANDELION).nonOpaque().strength(4.0f).breakInstantly());
@@ -62,6 +64,8 @@ public class Blocks {
         register("poop_chest", POOP_CHEST);
         register("ui_block", UI_BLOCK);
         register("poop_glass", POOP_GLASS);
+        //crop
+        register("poop_crop", POOP_CROP);
         //flower
         register("poop_flower", POOP_FLOWER);
         register("potted_poop_flower", POTTED_POOP_FLOWER);
@@ -73,6 +77,8 @@ public class Blocks {
         FabricMod.log("Register Blocks Client for + " + FabricMod.MOD_ID);
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_FLOWER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(POTTED_POOP_FLOWER, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(POOP_CROP, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_GLASS, RenderLayer.getTranslucent());
     }
