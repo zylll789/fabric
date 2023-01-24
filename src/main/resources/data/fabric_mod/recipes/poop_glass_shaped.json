@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:glass"
+    },
+    "b": {
+      "item": "fabric_mod:poop"
+    }
+  },
+  "result": {
+    "item": "fabric_mod:poop_glass",
+    "count": 8
+  }
+}

@@ -39,6 +39,7 @@ public class Items {
     public static final ClosestoolItem CLOSESTOOL_ITEM = new ClosestoolItem(Blocks.CLOSESTOOL, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final PoopChestItem POOP_CHEST_ITEM = new PoopChestItem(Blocks.POOP_CHEST, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final UIBlockItem UI_BLOCK_ITEM = new UIBlockItem(Blocks.UI_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final PoopGlassItem POOP_GLASS_ITEM = new PoopGlassItem(Blocks.POOP_GLASS, new FabricItemSettings().group(ItemGroups.BLOCKS));
     //flower
     public static final PoopFlowerItem POOP_FLOWER_ITEM = new PoopFlowerItem(Blocks.POOP_FLOWER, new FabricItemSettings().group(ItemGroups.BLOCKS));
     //entity egg item
@@ -67,6 +68,7 @@ public class Items {
         register("closestool", CLOSESTOOL_ITEM);
         register("poop_chest", POOP_CHEST_ITEM);
         register("ui_block", UI_BLOCK_ITEM);
+        register("poop_glass", POOP_GLASS_ITEM);
         //flower
         register("poop_flower", POOP_FLOWER_ITEM);
         //tool

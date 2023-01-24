@@ -37,6 +37,8 @@ public class Blocks {
             (2.5F, 0.5F).sounds(BlockSoundGroup.STONE).mapColor(MapColor.GRAY).requiresTool().nonOpaque());
     public static final UIBlock UI_BLOCK = new UIBlock(FabricBlockSettings.of(Material.SNOW_BLOCK).strength
             (1.0F, 1.0F).sounds(BlockSoundGroup.SNOW).mapColor(MapColor.GRAY).requiresTool());
+    public static final PoopGlass POOP_GLASS = new PoopGlass(FabricBlockSettings.copy(net.minecraft.block.Blocks.GLASS)
+            .strength(3.0f).nonOpaque());
 
     //flower
     public static final PoopFlower POOP_FLOWER = new PoopFlower(StatusEffects.NAUSEA, 12,
@@ -59,6 +61,7 @@ public class Blocks {
         register("closestool", CLOSESTOOL);
         register("poop_chest", POOP_CHEST);
         register("ui_block", UI_BLOCK);
+        register("poop_glass", POOP_GLASS);
         //flower
         register("poop_flower", POOP_FLOWER);
         register("potted_poop_flower", POTTED_POOP_FLOWER);
@@ -70,6 +73,8 @@ public class Blocks {
         FabricMod.log("Register Blocks Client for + " + FabricMod.MOD_ID);
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_FLOWER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(POTTED_POOP_FLOWER, RenderLayer.getCutout());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(POOP_GLASS, RenderLayer.getTranslucent());
     }
 
     private static void register(String id, Block block) {
