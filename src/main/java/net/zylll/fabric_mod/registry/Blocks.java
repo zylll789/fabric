@@ -1,7 +1,9 @@
 package net.zylll.fabric_mod.registry;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.sound.BlockSoundGroup;
@@ -36,8 +38,11 @@ public class Blocks {
             (1.0F, 1.0F).sounds(BlockSoundGroup.SNOW).mapColor(MapColor.GRAY).requiresTool());
 
     //flower
-    public static final PoopFlower POOP_FLOWER = new PoopFlower(StatusEffects.FIRE_RESISTANCE, 12,
-            FabricBlockSettings.of(Material.PLANT).noCollision().breakInstantly().sounds(BlockSoundGroup.GRASS));
+    public static final PoopFlower POOP_FLOWER = new PoopFlower(StatusEffects.NAUSEA, 12,
+            FabricBlockSettings.copy(net.minecraft.block.Blocks.DANDELION).nonOpaque().strength(4.0f).breakInstantly());
+    public static final Block POTTED_POOP_FLOWER = new FlowerPotBlock(POOP_FLOWER,
+            FabricBlockSettings.copy(net.minecraft.block.Blocks.POTTED_ALLIUM).nonOpaque());
+
     //fluid block
     public static Block POOP_FLUID;
 
@@ -53,9 +58,15 @@ public class Blocks {
         register("poop_chest", POOP_CHEST);
         register("ui_block", UI_BLOCK);
         //flower
-        register("poop_flower",POOP_FLOWER);
+        register("poop_flower", POOP_FLOWER);
+        register("potted_poop_flower", POTTED_POOP_FLOWER);
         //fluid block
         POOP_FLUID = register("poop_fluid", Fluids.STILL_POOP_FLUID);
+    }
+
+    public static void registerClient() {
+        BlockRenderLayerMap.INSTANCE.putBlock(POOP_FLOWER, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(POTTED_POOP_FLOWER, RenderLayer.getCutout());
     }
 
     private static void register(String id, Block block) {

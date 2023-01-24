@@ -21,6 +21,7 @@ import net.zylll.fabric_mod.block.entity.AllBlockEntities;
 import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.entity.model.PoopCubeEntityModel;
 import net.zylll.fabric_mod.entity.randerer.PoopCubeRanderer;
+import net.zylll.fabric_mod.registry.Blocks;
 import net.zylll.fabric_mod.registry.Fluids;
 import net.zylll.fabric_mod.registry.Particles;
 import net.zylll.fabric_mod.screen.UIBlockScreen;
@@ -36,6 +37,8 @@ public class FabricModClient implements ClientModInitializer {
 
         //screen handler
         ScreenRegistry.register(AllBlockEntities.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
+
+        Blocks.registerClient();
 
         //entity
         EntityRendererRegistry.register(AllEntities.POOP_CUBE, PoopCubeRanderer::new);

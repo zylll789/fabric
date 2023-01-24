@@ -44,6 +44,9 @@
   "block.fabric_mod.poop_chest": "Poop Chest",
   "block.fabric_mod.ui_block": "UI Block",
 
+  "block.fabric_mod.poop_flower": "Poop Flower",
+  "block.fabric_mod.potted_poop_flower": "Potted Poop Flower",
+
   "entity.fabric_mod.poop_cube": "Poop Cube",
 
   "itemGroup.fabric_mod.items": "Fabric Mod Items",
