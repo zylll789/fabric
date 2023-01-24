@@ -2,6 +2,7 @@ package net.zylll.fabric_mod.registry;
 
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SpecialRecipeSerializer;
+import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.recipe.*;
 
 public class Recipes {
@@ -18,6 +19,6 @@ public class Recipes {
             = RecipeSerializer.register("crafting_silk_bag", new SpecialRecipeSerializer<>(SilkBagRecipe::new));
 
     public static void register() {
-
+        FabricMod.log("Register Recipes for + " + FabricMod.MOD_ID);
     }
 }

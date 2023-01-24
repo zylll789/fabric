@@ -17,6 +17,7 @@ import net.minecraft.world.gen.placementmodifier.CountPlacementModifier;
 import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
 import net.minecraft.world.gen.placementmodifier.SquarePlacementModifier;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
+import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.feature.PoopFeature;
 import net.zylll.fabric_mod.feature.SpiralFeature;
 import net.zylll.fabric_mod.feature.featureConfig.PoopFeatureConfig;
@@ -68,6 +69,7 @@ public class Features {
     ));
 
     public static void register() {
+        FabricMod.log("Register Features for + " + FabricMod.MOD_ID);
         POOP_LAKE = Registry.register(Registry.FEATURE, makeID("poop_lake"), new PoopLake(LakeFeature.Config.CODEC));
 
         register("overworld_poop_block", OVERWORLD_POOP_BLOCK_CONFIGURED_FEATURE, OVERWORLD_POOP_BLOCK_PLACED_FEATURE, BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES);

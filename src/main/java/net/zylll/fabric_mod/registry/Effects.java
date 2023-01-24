@@ -4,6 +4,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.util.registry.Registry;
+import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.effect.EpinephrineEffect;
 import net.zylll.fabric_mod.effect.ExplosionEffect;
 
@@ -16,6 +17,7 @@ public class Effects {
     public static final ExplosionEffect EXPLOSION_EFFECT = new ExplosionEffect();
 
     public static void register() {
+        FabricMod.log("Register Effects for + " + FabricMod.MOD_ID);
         register("epinephrine_effect", EPINEPHRINE_EFFECT);
         register("explosion_effect", EXPLOSION_EFFECT);
     }

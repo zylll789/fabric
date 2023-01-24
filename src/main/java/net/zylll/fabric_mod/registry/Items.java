@@ -7,6 +7,7 @@ import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.item.*;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
+import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.ItemGroups;
 import net.zylll.fabric_mod.armor.PoopArmorItem;
 import net.zylll.fabric_mod.entity.AllEntities;
@@ -45,6 +46,7 @@ public class Items {
 
 
     public static void register() {
+        FabricMod.log("Register Items for + " + FabricMod.MOD_ID);
         //item
         register("poop", POOP);
         register("dowsing_rod", DOWSING_ROD);

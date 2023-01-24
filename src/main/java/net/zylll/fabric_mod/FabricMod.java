@@ -10,14 +10,16 @@ import org.apache.logging.log4j.Logger;
 public class FabricMod implements ModInitializer {
 
     public static final String MOD_ID = "fabric_mod";
-    public static final Logger LOGGER = LogManager.getLogger("modid");
+    private static final Logger LOGGER = LogManager.getLogger("fabric_mod");
 
     @Override
     public void onInitialize() {
+        log("Start for Registering Fabric Mod!");
         Particles.register();
         Fluids.register();
         Sounds.register();
         Blocks.register();
+        Paintings.register();
         Items.register();
         Recipes.register();
         Fuels.register();

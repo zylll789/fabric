@@ -3,6 +3,7 @@ package net.zylll.fabric_mod.registry;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.util.registry.Registry;
+import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.block.entity.*;
 import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.entity.PoopCube;
@@ -12,6 +13,7 @@ import static net.zylll.fabric_mod.FabricMod.makeID;
 public class Entities {
 
     public static void register(){
+        FabricMod.log("Register Entities for + " + FabricMod.MOD_ID);
         //block entity
         AllBlockEntities.BREAK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, makeID("break_entity"),
                 FabricBlockEntityTypeBuilder.create(BreakEntity::new, Blocks.BREAK_BLOCK).build(null));

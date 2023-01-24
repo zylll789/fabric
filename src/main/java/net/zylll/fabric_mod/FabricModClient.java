@@ -35,6 +35,8 @@ public class FabricModClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
 
+        FabricMod.log("Start for Registering Client of Fabric Mod!");
+
         //screen handler
         ScreenRegistry.register(AllBlockEntities.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
 

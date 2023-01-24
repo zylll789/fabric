@@ -8,6 +8,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.fluid.FlowableFluid;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.registry.Registry;
+import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.block.*;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
@@ -47,6 +48,7 @@ public class Blocks {
     public static Block POOP_FLUID;
 
     public static void register() {
+        FabricMod.log("Registering Blocks for + " + FabricMod.MOD_ID);
         //block
         register("poop_block", POOP_BLOCK);
         register("poop_slab", POOP_SLAB);
@@ -65,6 +67,7 @@ public class Blocks {
     }
 
     public static void registerClient() {
+        FabricMod.log("Register Blocks Client for + " + FabricMod.MOD_ID);
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_FLOWER, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(POTTED_POOP_FLOWER, RenderLayer.getCutout());
     }

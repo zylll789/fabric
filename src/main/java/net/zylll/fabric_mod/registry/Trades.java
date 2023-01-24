@@ -6,12 +6,14 @@ import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
+import net.zylll.fabric_mod.FabricMod;
 
 import java.util.Random;
 
 public class Trades {
 
     public static void register() {
+        FabricMod.log("Register Trades for + " + FabricMod.MOD_ID);
         sellSilkBag();
     }
 
