@@ -7,11 +7,15 @@
   "item.fabric_mod.silk_bag": "储物袋",
   "item.fabric_mod.poop_sound_disc": "臭唱片",
   "item.fabric_mod.poop_sound_disc.desc": "臭",
+  "item.fabric_mod.dowsing_rod": "寻矿杖",
 
   "item.fabric_mod.poop.tooltip": "很香啊(bushi",
-  "item.fabric_mod.poop_axe.tooltip": "概率获得雪，破坏上下方块或变方块为雪块",
+  "item.fabric_mod.poop_axe.tooltip1": "概率获得雪，",
+  "item.fabric_mod.poop_axe.tooltip2": "破坏上下方块",
+  "item.fabric_mod.poop_axe.tooltip3": "或变方块为雪块",
   "item.fabric_mod.poop_hoe.tooltip": "概率获得雪",
-  "item.fabric_mod.poop_pickaxe.tooltip": "概率获得雪或破坏左右方块",
+  "item.fabric_mod.poop_pickaxe.tooltip1": "概率获得雪或",
+  "item.fabric_mod.poop_pickaxe.tooltip2": "破坏左右方块",
   "item.fabric_mod.poop_shovel.tooltip": "概率获得雪",
   "item.fabric_mod.poop_sword.tooltip": "攻击爆炸，概率获得雪",
 
@@ -49,10 +53,14 @@
   "effect.fabric_mod.epinephrine_effect": "肾上腺强化",
   "effect.fabric_mod.explosion_effect": "爆炸",
 
+  "biome.fabric_mod.poop_land": "臭地",
+
   "advancements.poop_world.root.title": "臭！",
   "advancements.poop_world.root.description": "从臭物品开始",
   "advancements.poop_world.get_poop_block.title": "一大坨？",
   "advancements.poop_world.get_poop_block.description": "获得一个臭方块",
   "advancements.poop_world.eat_poop.title": "香",
-  "advancements.poop_world.eat_poop.description": "获得马桶并食用臭物品"
+  "advancements.poop_world.eat_poop.description": "获得马桶并食用臭物品",
+
+  "item.fabric_mod.dowsing_rod.no_found": "未发现指定的矿物"
 }

@@ -22,6 +22,7 @@ public class Items {
             new Poop(new FabricItemSettings().group(ItemGroups.ITEMS).food(
                     new FoodComponent.Builder().hunger(1).meat().snack().saturationModifier(1f).alwaysEdible().statusEffect(
                             new StatusEffectInstance(StatusEffects.POISON, 20 * 15, 2), 0.9F).build()).rarity(Rarity.UNCOMMON));
+    public static final DowsingRodItem DOWSING_ROD = new DowsingRodItem(new FabricItemSettings().group(ItemGroups.TOOLS).rarity(Rarity.EPIC).maxCount(1).maxDamage(10));
     public static Item POOP_FLUID_BUCKET;
     public static CopyItem COPY_ITEM = new CopyItem(new FabricItemSettings().group(ItemGroups.ITEMS).rarity(Rarity.RARE).maxCount(1));
     public static FinishedBookItem FINISHED_BOOK_ITEM = new FinishedBookItem(new FabricItemSettings().group(ItemGroups.ITEMS).maxCount(1));
@@ -44,6 +45,7 @@ public class Items {
     public static void register() {
         //item
         register("poop", POOP);
+        register("dowsing_rod",DOWSING_ROD);
         register("copy_item", COPY_ITEM);
         register("finished_book", FINISHED_BOOK_ITEM);
         register("silk_bag", SILK_BAG);

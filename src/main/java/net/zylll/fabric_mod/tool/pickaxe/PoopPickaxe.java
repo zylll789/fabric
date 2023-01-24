@@ -25,7 +25,8 @@ public class PoopPickaxe extends PickaxeItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(new TranslatableText("item.fabric_mod.poop_pickaxe.tooltip"));
+        tooltip.add(new TranslatableText("item.fabric_mod.poop_pickaxe.tooltip1"));
+        tooltip.add(new TranslatableText("item.fabric_mod.poop_pickaxe.tooltip2"));
     }
 
     @Override

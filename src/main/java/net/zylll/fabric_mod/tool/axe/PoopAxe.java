@@ -25,7 +25,9 @@ public class PoopAxe extends AxeItem {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(new TranslatableText("item.fabric_mod.poop_axe.tooltip"));
+        tooltip.add(new TranslatableText("item.fabric_mod.poop_axe.tooltip1"));
+        tooltip.add(new TranslatableText("item.fabric_mod.poop_axe.tooltip2"));
+        tooltip.add(new TranslatableText("item.fabric_mod.poop_axe.tooltip3"));
     }
 
     @Override

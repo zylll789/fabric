@@ -1,5 +1,6 @@
 {
   "item.fabric_mod.poop": "Poop",
+  "item.fabric_mod.dowsing_rod": "Dowsing Rod",
   "item.fabric_mod.poop_cube_spawn_egg": "Poop Cube Spawn Egg",
   "item.fabric_mod.poop_fluid_bucket": "Poop Fluid Bucket",
   "item.fabric_mod.copy_item": "Copy Item",
@@ -9,9 +10,12 @@
   "item.fabric_mod.poop_sound_disc.desc": "Poop Sound",
 
   "item.fabric_mod.poop.tooltip": "What a smelly thing",
-  "item.fabric_mod.poop_axe.tooltip": "Possibly getting Poop, destroying upper and lower blocks or changing blocks to Poop Block",
+  "item.fabric_mod.poop_axe.tooltip1": "Possibly getting Poop, ",
+  "item.fabric_mod.poop_axe.tooltip2": "destroying upper and lower blocks",
+  "item.fabric_mod.poop_axe.tooltip3": "or changing blocks to Poop Block",
   "item.fabric_mod.poop_hoe.tooltip": "Possibly getting Poop",
-  "item.fabric_mod.poop_pickaxe.tooltip": "Possibly getting Poop or destroying left and right blocks",
+  "item.fabric_mod.poop_pickaxe.tooltip1": "Possibly getting Poop or",
+  "item.fabric_mod.poop_pickaxe.tooltip2": "destroying left and right blocks",
   "item.fabric_mod.poop_shovel.tooltip": "Possibly getting Poop",
   "item.fabric_mod.poop_sword.tooltip": "Attack explosion, possibly getting Poop",
 
@@ -49,10 +53,14 @@
   "effect.fabric_mod.epinephrine_effect": "Epinephrine Effect",
   "effect.fabric_mod.explosion_effect": "Explosion Effect",
 
+  "biome.fabric_mod.poop_land": "Poop Land",
+
   "advancements.poop_world.root.title": "Poop!",
   "advancements.poop_world.root.description": "Start with a Poop",
   "advancements.poop_world.get_poop_block.title": "Big Poop?",
   "advancements.poop_world.get_poop_block.description": "Get a Poop Block",
   "advancements.poop_world.eat_poop.title": "Tasty",
-  "advancements.poop_world.eat_poop.description": "Get a Closestool and eat a Poop"
+  "advancements.poop_world.eat_poop.description": "Get a Closestool and eat a Poop",
+
+  "item.fabric_mod.dowsing_rod.no_found": "Not found any appointed ore"
 }

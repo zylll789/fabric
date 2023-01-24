@@ -22,11 +22,12 @@ public class FabricMod implements ModInitializer {
         Recipes.register();
         Fuels.register();
         Entities.register();
-        Features.register();
         Effects.register();
         Potions.register();
-        Commands.register();
+        Features.register();
+        Biomes.register();
         Trades.register();
+        Commands.register();
     }
 
     public static Identifier makeID(String id) {
