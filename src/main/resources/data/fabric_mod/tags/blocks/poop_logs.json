@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "fabric_mod:poop_log",
+    "fabric_mod:poop_wood",
+    "fabric_mod:stripped_poop_log",
+    "fabric_mod:stripped_poop_wood"
+  ]
+}

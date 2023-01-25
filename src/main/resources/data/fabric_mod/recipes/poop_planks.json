@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "fabric_mod:poop_logs"
+    }
+  ],
+  "result": {
+    "item": "fabric_mod:poop_planks",
+    "count": 4
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "fabric_mod:block/poop_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "fabric_mod:block/poop_wood"
+    },
+    "axis=z": {
+      "model": "fabric_mod:block/poop_wood",
+      "x": 90
+    }
+  }
+}

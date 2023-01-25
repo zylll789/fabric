@@ -8,7 +8,10 @@ import net.minecraft.text.LiteralText;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
-import net.zylll.fabric_mod.registry.Blocks;
+import net.minecraft.util.registry.Registry;
+import net.zylll.fabric_mod.util.Tags;
+
+import java.util.Objects;
 
 public class DowsingRodItem extends Item {
     public DowsingRodItem(Settings settings) {
@@ -21,6 +24,7 @@ public class DowsingRodItem extends Item {
             BlockPos pos = context.getBlockPos();
             PlayerEntity playerEntity = context.getPlayer();
             boolean found = false;
+            assert playerEntity != null;
             for (int i = 0; i <= pos.getY() + 64; i++) {
                 Block block = context.getWorld().getBlockState(pos.down(i)).getBlock();
                 if (isValuableBlock(block)) {
@@ -32,7 +36,7 @@ public class DowsingRodItem extends Item {
                 playerEntity.sendMessage(new TranslatableText("item.fabric_mod.dowsing_rod.no_found"), false);
             }
         }
-        context.getStack().damage(1, context.getPlayer(), (playerEntity -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand())));
+        context.getStack().damage(1, Objects.requireNonNull(context.getPlayer()), (playerEntity -> playerEntity.sendToolBreakStatus(playerEntity.getActiveHand())));
         return super.useOnBlock(context);
     }
 
@@ -42,6 +46,6 @@ public class DowsingRodItem extends Item {
     }
 
     private boolean isValuableBlock(Block block) {
-        return block == Blocks.POOP_BLOCK || block == Blocks.TRICK_BLOCK || block == Blocks.ORE_CHANGED_BLOCK;
+        return Registry.BLOCK.getOrCreateEntry(Registry.BLOCK.getKey(block).get()).isIn(Tags.Blocks.DOWSING_ROD_TARGET);
     }
 }

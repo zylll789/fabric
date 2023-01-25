@@ -2,6 +2,8 @@ package net.zylll.fabric_mod.registry;
 
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.*;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.effect.StatusEffects;
@@ -40,6 +42,12 @@ public class Blocks {
     public static final PoopGlass POOP_GLASS = new PoopGlass(FabricBlockSettings.copy(net.minecraft.block.Blocks.GLASS)
             .strength(3.0f).nonOpaque());
 
+    public static final Block POOP_LOG = new PillarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.OAK_LOG).strength(4.0f));
+    public static final Block POOP_WOOD = new PillarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.OAK_WOOD).strength(4.0f));
+    public static final Block STRIPPED_POOP_LOG = new PillarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.STRIPPED_OAK_LOG).strength(4.0f));
+    public static final Block STRIPPED_POOP_WOOD = new PillarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.STRIPPED_OAK_WOOD).strength(4.0f));
+
+    public static final Block POOP_PLANKS = new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.OAK_PLANKS).strength(4.0f));
     //crop
     public static final PoopCrop POOP_CROP = new PoopCrop(FabricBlockSettings.copy(net.minecraft.block.Blocks.WHEAT).nonOpaque());
     //flower
@@ -64,6 +72,12 @@ public class Blocks {
         register("poop_chest", POOP_CHEST);
         register("ui_block", UI_BLOCK);
         register("poop_glass", POOP_GLASS);
+
+        register("poop_log", POOP_LOG);
+        register("poop_wood", POOP_WOOD);
+        register("stripped_poop_log", STRIPPED_POOP_LOG);
+        register("stripped_poop_wood", STRIPPED_POOP_WOOD);
+        register("poop_planks", POOP_PLANKS);
         //crop
         register("poop_crop", POOP_CROP);
         //flower
@@ -71,6 +85,9 @@ public class Blocks {
         register("potted_poop_flower", POTTED_POOP_FLOWER);
         //fluid block
         POOP_FLUID = register("poop_fluid", Fluids.STILL_POOP_FLUID);
+
+        registerFlammableBlock();
+        registerStrippableBlock();
     }
 
     public static void registerClient() {
@@ -81,6 +98,20 @@ public class Blocks {
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_CROP, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_GLASS, RenderLayer.getTranslucent());
+    }
+
+    private static void registerFlammableBlock() {
+        FlammableBlockRegistry instance = FlammableBlockRegistry.getDefaultInstance();
+        instance.add(POOP_LOG, 5, 5);
+        instance.add(POOP_WOOD, 5, 5);
+        instance.add(STRIPPED_POOP_LOG, 5, 5);
+        instance.add(STRIPPED_POOP_WOOD, 5, 5);
+        instance.add(POOP_PLANKS, 5, 20);
+    }
+
+    private static void registerStrippableBlock() {
+        StrippableBlockRegistry.register(POOP_LOG, STRIPPED_POOP_LOG);
+        StrippableBlockRegistry.register(POOP_WOOD, STRIPPED_POOP_WOOD);
     }
 
     private static void register(String id, Block block) {

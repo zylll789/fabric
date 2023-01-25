@@ -41,6 +41,12 @@ public class Items {
     public static final PoopChestItem POOP_CHEST_ITEM = new PoopChestItem(Blocks.POOP_CHEST, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final UIBlockItem UI_BLOCK_ITEM = new UIBlockItem(Blocks.UI_BLOCK, new FabricItemSettings().group(ItemGroups.BLOCKS));
     public static final PoopGlassItem POOP_GLASS_ITEM = new PoopGlassItem(Blocks.POOP_GLASS, new FabricItemSettings().group(ItemGroups.BLOCKS));
+
+    public static final BlockItem POOP_LOG_ITEM = new BlockItem(Blocks.POOP_LOG, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final BlockItem POOP_WOOD_ITEM = new BlockItem(Blocks.POOP_WOOD, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final BlockItem STRIPPED_POOP_LOG_ITEM = new BlockItem(Blocks.STRIPPED_POOP_LOG, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final BlockItem STRIPPED_POOP_WOOD_ITEM = new BlockItem(Blocks.STRIPPED_POOP_WOOD, new FabricItemSettings().group(ItemGroups.BLOCKS));
+    public static final BlockItem POOP_PLANKS_ITEM = new BlockItem(Blocks.POOP_PLANKS, new FabricItemSettings().group(ItemGroups.BLOCKS));
     //crop
     public static final Item POOP_CROP_SEED = new AliasedBlockItem(Blocks.POOP_CROP, new FabricItemSettings().group(ItemGroups.ITEMS));
     //flower
@@ -72,6 +78,12 @@ public class Items {
         register("poop_chest", POOP_CHEST_ITEM);
         register("ui_block", UI_BLOCK_ITEM);
         register("poop_glass", POOP_GLASS_ITEM);
+
+        register("poop_log", POOP_LOG_ITEM);
+        register("poop_wood", POOP_WOOD_ITEM);
+        register("stripped_poop_log", STRIPPED_POOP_LOG_ITEM);
+        register("stripped_poop_wood", STRIPPED_POOP_WOOD_ITEM);
+        register("poop_planks", POOP_PLANKS_ITEM);
         //crop
         register("poop_crop_seed", POOP_CROP_SEED);
         //flower
@@ -90,7 +102,7 @@ public class Items {
         register("poop_boots", PoopArmorItem.POOP_BOOTS);
     }
 
-    public static void registerClient(){
+    public static void registerClient() {
         ModelPredicateProvider.registerBow(AllTools.POOP_BOW);
     }
 

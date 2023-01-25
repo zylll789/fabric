@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "fabric_mod:block/stripped_poop_log",
+    "side": "fabric_mod:block/stripped_poop_log"
+  }
+}

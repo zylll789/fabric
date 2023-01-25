@@ -47,6 +47,12 @@
   "block.fabric_mod.ui_block": "UI Block",
   "block.fabric_mod.poop_glass": "Poop Glass",
 
+  "block.fabric_mod.poop_log": "Poop Log",
+  "block.fabric_mod.poop_wood": "Poop Wood",
+  "block.fabric_mod.stripped_poop_log": "Stripped Poop Log",
+  "block.fabric_mod.stripped_poop_wood": "Stripped Poop Wood",
+  "block.fabric_mod.poop_planks": "Poop Planks",
+
   "block.fabric_mod.poop_flower": "Poop Flower",
   "block.fabric_mod.potted_poop_flower": "Potted Poop Flower",
 
