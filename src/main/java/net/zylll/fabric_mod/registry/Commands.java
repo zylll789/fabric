@@ -12,7 +12,7 @@ public class Commands {
     public static void register() {
         FabricMod.log("Registering Commands for + " + FabricMod.MOD_ID);
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> NBTCommand.register(dispatcher));
-        CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> FakePlayerCommand.register(dispatcher));
+        //CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> FakePlayerCommand.register(dispatcher));
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> SetHomeCommand.register(dispatcher));
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> ReturnHomeCommand.register(dispatcher));
     }
