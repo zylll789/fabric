@@ -4,6 +4,7 @@
   "package": "net.zylll.fabric_mod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "EntityDataSaverMixin"
   ],
   "client": [
     "BrewingMixin"

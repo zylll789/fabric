@@ -18,6 +18,7 @@ public class FabricMod implements ModInitializer {
         Particles.register();
         Fluids.register();
         Sounds.register();
+        Events.register();
         Blocks.register();
         Paintings.register();
         Items.register();
