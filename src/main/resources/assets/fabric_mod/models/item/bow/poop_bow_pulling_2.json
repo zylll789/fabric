@@ -1,0 +1,6 @@
+{
+    "parent": "fabric_mod:item/poop_bow",
+    "textures": {
+        "layer0": "fabric_mod:item/poop_bow_pulling_2"
+    }
+}

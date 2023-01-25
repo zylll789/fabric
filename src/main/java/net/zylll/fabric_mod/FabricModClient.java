@@ -23,6 +23,7 @@ import net.zylll.fabric_mod.entity.model.PoopCubeEntityModel;
 import net.zylll.fabric_mod.entity.randerer.PoopCubeRanderer;
 import net.zylll.fabric_mod.registry.Blocks;
 import net.zylll.fabric_mod.registry.Fluids;
+import net.zylll.fabric_mod.registry.Items;
 import net.zylll.fabric_mod.registry.Particles;
 import net.zylll.fabric_mod.screen.UIBlockScreen;
 
@@ -36,6 +37,13 @@ public class FabricModClient implements ClientModInitializer {
     public void onInitializeClient() {
 
         FabricMod.log("Start for Registering Client of Fabric Mod!");
+        //particles
+        ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
+            ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> registry.register(makeID("particle/red_star")));
+            ParticleFactoryRegistry.getInstance().register(Particles.RED_STAR, FlameParticle.Factory::new);
+        });
+
+        Items.registerClient();
 
         //screen handler
         ScreenRegistry.register(AllBlockEntities.UI_BLOCK_SCREEN_HANDLER, UIBlockScreen::new);
@@ -53,10 +61,5 @@ public class FabricModClient implements ClientModInitializer {
                 0xC49C33));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), Fluids.STILL_POOP_FLUID, Fluids.FLOWING_POOP_FLUID);
 
-        //particles
-        ClientLifecycleEvents.CLIENT_STARTED.register(client -> {
-            ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register((atlasTexture, registry) -> registry.register(makeID("particle/red_star")));
-            ParticleFactoryRegistry.getInstance().register(Particles.RED_STAR, FlameParticle.Factory::new);
-        });
     }
 }

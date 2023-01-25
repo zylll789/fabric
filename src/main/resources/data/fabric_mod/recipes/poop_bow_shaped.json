@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "a#X",
+    "#aX",
+    "a#X"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "minecraft:string"
+    },
+    "a": {
+      "item": "fabric_mod:poop"
+    }
+  },
+  "result": {
+    "item": "fabric_mod:poop_bow"
+  }
+}

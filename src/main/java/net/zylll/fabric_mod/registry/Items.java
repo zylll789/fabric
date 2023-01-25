@@ -13,6 +13,7 @@ import net.zylll.fabric_mod.armor.PoopArmorItem;
 import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.item.*;
 import net.zylll.fabric_mod.tool.AllTools;
+import net.zylll.fabric_mod.util.ModelPredicateProvider;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
 
@@ -81,11 +82,16 @@ public class Items {
         register("poop_pickaxe", AllTools.POOP_PICKAXE);
         register("poop_shovel", AllTools.POOP_SHOVEL);
         register("poop_hoe", AllTools.POOP_HOE);
+        register("poop_bow", AllTools.POOP_BOW);
         //armor
         register("poop_helmet", PoopArmorItem.POOP_HELMET);
         register("poop_chestplate", PoopArmorItem.POOP_CHESTPLATE);
         register("poop_leggings", PoopArmorItem.POOP_LEGGINGS);
         register("poop_boots", PoopArmorItem.POOP_BOOTS);
+    }
+
+    public static void registerClient(){
+        ModelPredicateProvider.registerBow(AllTools.POOP_BOW);
     }
 
     private static void register(String id, Item item) {
