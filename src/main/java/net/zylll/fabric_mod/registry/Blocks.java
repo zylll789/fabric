@@ -12,6 +12,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.registry.Registry;
 import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.block.*;
+import net.zylll.fabric_mod.world.feature.tree.PoopSaplingGenerator;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
 
@@ -46,6 +47,9 @@ public class Blocks {
     public static final Block POOP_WOOD = new PillarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.OAK_WOOD).strength(4.0f));
     public static final Block STRIPPED_POOP_LOG = new PillarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.STRIPPED_OAK_LOG).strength(4.0f));
     public static final Block STRIPPED_POOP_WOOD = new PillarBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.STRIPPED_OAK_WOOD).strength(4.0f));
+    public static final Block POOP_LEAVES = new LeavesBlock(FabricBlockSettings.copy(net.minecraft.block.Blocks.OAK_LEAVES));
+    public static final PoopSapling POOP_SAPLING = new PoopSapling(new PoopSaplingGenerator(),
+            FabricBlockSettings.copy(net.minecraft.block.Blocks.OAK_SAPLING).nonOpaque().breakInstantly());
 
     public static final Block POOP_PLANKS = new Block(FabricBlockSettings.copy(net.minecraft.block.Blocks.OAK_PLANKS).strength(4.0f));
     //crop
@@ -77,6 +81,8 @@ public class Blocks {
         register("poop_wood", POOP_WOOD);
         register("stripped_poop_log", STRIPPED_POOP_LOG);
         register("stripped_poop_wood", STRIPPED_POOP_WOOD);
+        register("poop_leaves", POOP_LEAVES);
+        register("poop_sapling", POOP_SAPLING);
         register("poop_planks", POOP_PLANKS);
         //crop
         register("poop_crop", POOP_CROP);
@@ -98,6 +104,9 @@ public class Blocks {
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_CROP, RenderLayer.getCutout());
 
         BlockRenderLayerMap.INSTANCE.putBlock(POOP_GLASS, RenderLayer.getTranslucent());
+
+        BlockRenderLayerMap.INSTANCE.putBlock(POOP_SAPLING, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(POOP_LEAVES, RenderLayer.getCutout());
     }
 
     private static void registerFlammableBlock() {
@@ -107,6 +116,7 @@ public class Blocks {
         instance.add(STRIPPED_POOP_LOG, 5, 5);
         instance.add(STRIPPED_POOP_WOOD, 5, 5);
         instance.add(POOP_PLANKS, 5, 20);
+        instance.add(POOP_LEAVES, 30, 60);
     }
 
     private static void registerStrippableBlock() {

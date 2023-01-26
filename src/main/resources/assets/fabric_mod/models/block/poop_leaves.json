@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "fabric_mod:block/poop_leaves"
+  }
+}

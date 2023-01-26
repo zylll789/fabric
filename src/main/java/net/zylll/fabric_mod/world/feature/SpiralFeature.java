@@ -1,4 +1,4 @@
-package net.zylll.fabric_mod.feature;
+package net.zylll.fabric_mod.world.feature;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

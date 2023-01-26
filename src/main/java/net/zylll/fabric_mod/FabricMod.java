@@ -3,6 +3,7 @@ package net.zylll.fabric_mod;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import net.zylll.fabric_mod.registry.*;
+import net.zylll.fabric_mod.world.gen.WorldGen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -31,6 +32,8 @@ public class FabricMod implements ModInitializer {
         Biomes.register();
         Trades.register();
         Commands.register();
+
+        WorldGen.generate();
     }
 
     public static Identifier makeID(String id) {

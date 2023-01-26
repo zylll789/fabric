@@ -1,4 +1,4 @@
-package net.zylll.fabric_mod.feature;
+package net.zylll.fabric_mod.world.feature;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
@@ -10,7 +10,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-import net.zylll.fabric_mod.feature.featureConfig.PoopFeatureConfig;
+import net.zylll.fabric_mod.world.feature.featureConfig.PoopFeatureConfig;
 
 import java.util.Random;
 
