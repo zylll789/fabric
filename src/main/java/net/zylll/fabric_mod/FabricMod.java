@@ -3,6 +3,7 @@ package net.zylll.fabric_mod;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import net.zylll.fabric_mod.registry.*;
+import net.zylll.fabric_mod.util.LootTableModifiers;
 import net.zylll.fabric_mod.world.dimension.Dimensions;
 import net.zylll.fabric_mod.world.gen.WorldGen;
 import org.apache.logging.log4j.LogManager;
@@ -35,6 +36,8 @@ public class FabricMod implements ModInitializer {
         Commands.register();
 
         WorldGen.generate();
+
+        LootTableModifiers.modifyLootTable();
 
         Dimensions.register();
     }
