@@ -4,6 +4,7 @@ public class WorldGen {
 
     public static void generate() {
         TreeGeneration.generateTrees();
+        FlowerGeneration.generateFlowers();
     }
 
 }

@@ -29,6 +29,11 @@ public class ModConfiguredFeatures {
             ConfiguredFeatures.register("poop_tree_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfig(List.of(new RandomFeatureEntry(POOP_TREE_CHECKED, 0.5f)), POOP_TREE_CHECKED));
 
+    public static final RegistryEntry<ConfiguredFeature<RandomPatchFeatureConfig, ?>> POOP_FLOWER =
+            ConfiguredFeatures.register("poop_flower", Feature.FLOWER,
+                    ConfiguredFeatures.createRandomPatchFeatureConfig(64, PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockFeatureConfig(BlockStateProvider.of(Blocks.POOP_FLOWER)))));
+
     public static void registerConfiguredFeatures() {
         FabricMod.log("Register Configured Features for " + FabricMod.MOD_ID);
     }
