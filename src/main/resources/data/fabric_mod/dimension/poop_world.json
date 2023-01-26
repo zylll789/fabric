@@ -1,0 +1,12 @@
+{
+  "type": "fabric_mod:poop_world",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": -1266615200,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "fabric_mod:poop_land"
+    }
+  }
+}
