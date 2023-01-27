@@ -2,6 +2,7 @@ package net.zylll.fabric_mod.tool;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.zylll.fabric_mod.ItemGroups;
+import net.zylll.fabric_mod.item.Plunger;
 import net.zylll.fabric_mod.tool.axe.PoopAxe;
 import net.zylll.fabric_mod.tool.bow.PoopBow;
 import net.zylll.fabric_mod.tool.hoe.PoopHoe;
@@ -17,6 +18,8 @@ public class AllTools {
     public static final PoopPickaxe POOP_PICKAXE = new PoopPickaxe(new PoopMaterial(), 3,-3.0F,new FabricItemSettings().group(ItemGroups.TOOLS));
     public static final PoopShovel POOP_SHOVEL = new PoopShovel(new PoopMaterial(), 3, -2.5F, new FabricItemSettings().group(ItemGroups.TOOLS));
     public static final PoopHoe POOP_HOE = new PoopHoe(new PoopMaterial(), 2, -1.0F, new FabricItemSettings().group(ItemGroups.TOOLS));
+
+    public static final Plunger PLUNGER = new Plunger(new FabricItemSettings().group(ItemGroups.TOOLS).maxCount(1));
 
     public static final PoopBow POOP_BOW = new PoopBow(new FabricItemSettings().group(ItemGroups.TOOLS).maxDamage(640));
 

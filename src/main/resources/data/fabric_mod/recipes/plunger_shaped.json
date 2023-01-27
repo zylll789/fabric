@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bdb",
+    "cac",
+    "bab"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:stick"
+    },
+    "b": {
+      "item": "fabric_mod:poop_block"
+    },
+    "c": {
+      "item": "minecraft:quartz_block"
+    },
+    "d": {
+      "item": "fabric_mod:poop"
+    }
+  },
+  "result": {
+    "item": "fabric_mod:plunger"
+  }
+}

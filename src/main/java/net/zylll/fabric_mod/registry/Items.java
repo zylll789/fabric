@@ -98,6 +98,7 @@ public class Items {
         register("poop_pickaxe", AllTools.POOP_PICKAXE);
         register("poop_shovel", AllTools.POOP_SHOVEL);
         register("poop_hoe", AllTools.POOP_HOE);
+        register("plunger", AllTools.PLUNGER);
         register("poop_bow", AllTools.POOP_BOW);
         //armor
         register("poop_helmet", PoopArmorItem.POOP_HELMET);
