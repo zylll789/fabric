@@ -6,4 +6,6 @@ public interface IEntityDataSaver {
 
     NbtCompound getPersistentData();
 
+    NbtCompound getWeightless();
+
 }

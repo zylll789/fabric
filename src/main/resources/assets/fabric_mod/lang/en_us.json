@@ -70,6 +70,7 @@
   "effect.fabric_mod.epinephrine_effect": "Epinephrine Effect",
   "effect.fabric_mod.explosion_effect": "Explosion Effect",
   "effect.fabric_mod.freeze_effect": "Freeze Effect",
+  "effect.fabric_mod.weightless_effect": "Weightless Effect",
 
   "biome.fabric_mod.poop_land": "Poop Land",
 
@@ -80,5 +81,8 @@
   "advancements.poop_world.eat_poop.title": "Tasty",
   "advancements.poop_world.eat_poop.description": "Get a Closestool and eat a Poop",
 
-  "item.fabric_mod.dowsing_rod.no_found": "Not found any appointed ore"
+  "item.fabric_mod.dowsing_rod.no_found": "Not found any appointed ore",
+
+  "key.fabric_mod.weightless": "Weightless",
+  "key.categories.fabric_mod.all": "Keyboard Fabric Mod"
 }

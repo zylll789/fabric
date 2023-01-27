@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(Entity.class)
 public abstract class EntityDataSaverMixin implements IEntityDataSaver {
     private NbtCompound persistentData;
+    private NbtCompound isWeightless;
 
     @Override
     public NbtCompound getPersistentData() {
@@ -21,10 +22,21 @@ public abstract class EntityDataSaverMixin implements IEntityDataSaver {
         return persistentData;
     }
 
+    @Override
+    public NbtCompound getWeightless() {
+        if (this.isWeightless == null) {
+            this.isWeightless = new NbtCompound();
+        }
+        return isWeightless;
+    }
+
     @Inject(method = "writeNbt", at = @At("HEAD"))
     protected void injectWriteNBT(NbtCompound nbt, CallbackInfoReturnable info) {
         if (persistentData != null) {
             nbt.put("fabric_mod.extra_data", persistentData);
+        }
+        if (isWeightless != null) {
+            nbt.put("fabric_mod.isWeightless", isWeightless);
         }
     }
 
@@ -32,6 +44,9 @@ public abstract class EntityDataSaverMixin implements IEntityDataSaver {
     protected void injectReadNBT(NbtCompound nbt, CallbackInfo ci) {
         if (nbt.contains("fabric_mod.extra_data", 10)) {
             persistentData = nbt.getCompound("fabric_mod.extra_data");
+        }
+        if (nbt.contains("fabric_mod.isWeightless", 10)) {
+            isWeightless = nbt.getCompound("fabric_mod.isWeightless");
         }
     }
 }
