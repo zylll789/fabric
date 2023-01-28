@@ -10,6 +10,7 @@ import net.zylll.fabric_mod.registry.*;
 import net.zylll.fabric_mod.util.LootTableModifiers;
 import net.zylll.fabric_mod.world.dimension.Dimensions;
 import net.zylll.fabric_mod.world.gen.WorldGen;
+import net.zylll.fabric_mod.world.structures.Structures;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
@@ -20,7 +21,7 @@ import java.util.Objects;
 public class FabricMod implements ModInitializer {
 
     public static final String MOD_ID = "fabric_mod";
-    private static final Logger LOGGER = LogManager.getLogger("fabric_mod");
+    public static final Logger LOGGER = LogManager.getLogger("fabric_mod");
 
     private static KeyBinding key;
 
@@ -45,7 +46,7 @@ public class FabricMod implements ModInitializer {
         Commands.register();
 
         WorldGen.generate();
-
+        Structures.registerStructureFeatures();
         LootTableModifiers.modifyLootTable();
 
         Dimensions.register();
