@@ -81,8 +81,14 @@ public class SkyStructures extends StructureFeature<StructurePoolFeatureConfig> 
         // Set's our spawning blockpos's y offset to be 60 blocks up.
         // Since we are going to have heightmap/terrain height spawning set to true further down, this will make it so we spawn 60 blocks above terrain.
         // If we wanted to spawn on ocean floor, we would set heightmap/terrain height spawning to false and the grab the y value of the terrain with OCEAN_FLOOR_WG heightmap.
-        int topLandY = context.chunkGenerator().getHeightOnGround(blockpos.getX(), blockpos.getZ(), Heightmap.Type.WORLD_SURFACE_WG, context.world());
-        blockpos = blockpos.up(topLandY + 60);
+        int topLandY;
+        if(context.isBiomeValid(Heightmap.Type.WORLD_SURFACE_WG)) {
+            topLandY = context.chunkGenerator().getHeightOnGround(blockpos.getX(), blockpos.getZ(), Heightmap.Type.WORLD_SURFACE_WG, context.world());
+            blockpos = blockpos.up(topLandY + 60);
+        }else {
+            topLandY = context.chunkGenerator().getHeightOnGround(blockpos.getX(), blockpos.getZ(), Heightmap.Type.OCEAN_FLOOR_WG, context.world());
+            blockpos = blockpos.up(topLandY + 60);
+        }
 
         Optional<StructurePiecesGenerator<StructurePoolFeatureConfig>> structurePiecesGenerator =
                 StructurePoolBasedGenerator.generate(
