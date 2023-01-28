@@ -1,6 +1,7 @@
 {
   "item.fabric_mod.poop": "雪（难视",
   "item.fabric_mod.poop_cube_spawn_egg": "雪块(动 生成蛋",
+  "item.fabric_mod.y_slime_spawn_egg": "奇怪史莱姆生成蛋",
   "item.fabric_mod.poop_fluid_bucket": "雪桶",
   "item.fabric_mod.copy_item": "复制卷轴 ",
   "item.fabric_mod.finished_book": "成书",
@@ -62,6 +63,7 @@
   "block.fabric_mod.poop_crop": "臭植物",
 
   "entity.fabric_mod.poop_cube": "雪块(动",
+  "entity.fabric_mod.y_slime": "奇怪的史莱姆",
 
   "itemGroup.fabric_mod.items": "Fabric Mod 物品",
   "itemGroup.fabric_mod.blocks": "Fabric Mod 方块",

@@ -36,7 +36,7 @@ public class WeightlessEffect extends StatusEffect {
             if (isWeightless) {
                 //playerEntity.setNoGravity(true);
                 Vec3d velocity = playerEntity.getVelocity();
-                playerEntity.setVelocity(velocity.x, 0.5f, velocity.z);
+                playerEntity.setVelocity(velocity.x, 0.4f, velocity.z);
             } else {
                 //playerEntity.setNoGravity(false);
             }

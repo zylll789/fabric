@@ -2,15 +2,24 @@ package net.zylll.fabric_mod.registry;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
+import net.minecraft.entity.EntityDimensions;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.registry.Registry;
 import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.block.entity.*;
-import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.entity.PoopCube;
+import net.zylll.fabric_mod.entity.YSlimeEntity;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
 
 public class Entities {
+
+    public static final EntityType<PoopCube> POOP_CUBE = Registry.register(Registry.ENTITY_TYPE, makeID("poop_cube"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, PoopCube::new).dimensions(EntityDimensions.fixed(0.75F, 0.75F)).build());
+    public static final EntityType<YSlimeEntity> Y_SLIME = Registry.register(Registry.ENTITY_TYPE,makeID("y_slime"),
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER,YSlimeEntity::new).dimensions(EntityDimensions.changing(1.6f,1f)).build());
 
     public static void register(){
         FabricMod.log("Register Entities for + " + FabricMod.MOD_ID);
@@ -24,6 +33,8 @@ public class Entities {
         AllBlockEntities.UI_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, makeID("ui_block_entity"),
                 FabricBlockEntityTypeBuilder.create(UIBlockEntity::new, Blocks.UI_BLOCK).build(null));
         //entity
-        FabricDefaultAttributeRegistry.register(AllEntities.POOP_CUBE, PoopCube.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(POOP_CUBE, PoopCube.createMobAttributes());
+        FabricDefaultAttributeRegistry.register(Y_SLIME, YSlimeEntity.setAttributes());
+
     }
 }

@@ -18,13 +18,10 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.util.Identifier;
 import net.zylll.fabric_mod.block.entity.AllBlockEntities;
-import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.entity.model.PoopCubeEntityModel;
 import net.zylll.fabric_mod.entity.randerer.PoopCubeRanderer;
-import net.zylll.fabric_mod.registry.Blocks;
-import net.zylll.fabric_mod.registry.Fluids;
-import net.zylll.fabric_mod.registry.Items;
-import net.zylll.fabric_mod.registry.Particles;
+import net.zylll.fabric_mod.entity.randerer.YSlimeRanderer;
+import net.zylll.fabric_mod.registry.*;
 import net.zylll.fabric_mod.screen.UIBlockScreen;
 
 import static net.zylll.fabric_mod.FabricMod.makeID;
@@ -51,8 +48,10 @@ public class FabricModClient implements ClientModInitializer {
         Blocks.registerClient();
 
         //entity
-        EntityRendererRegistry.register(AllEntities.POOP_CUBE, PoopCubeRanderer::new);
+        EntityRendererRegistry.register(Entities.POOP_CUBE, PoopCubeRanderer::new);
         EntityModelLayerRegistry.registerModelLayer(MODEL_POOP_CUBE_LAYER, PoopCubeEntityModel::getTexturedModelData);
+
+        EntityRendererRegistry.register(Entities.Y_SLIME, YSlimeRanderer::new);
 
         //fluid
         FluidRenderHandlerRegistry.INSTANCE.register(Fluids.STILL_POOP_FLUID, Fluids.FLOWING_POOP_FLUID, new SimpleFluidRenderHandler(

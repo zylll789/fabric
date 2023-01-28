@@ -10,7 +10,6 @@ import net.minecraft.util.registry.Registry;
 import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.ItemGroups;
 import net.zylll.fabric_mod.armor.PoopArmorItem;
-import net.zylll.fabric_mod.entity.AllEntities;
 import net.zylll.fabric_mod.item.*;
 import net.zylll.fabric_mod.tool.AllTools;
 import net.zylll.fabric_mod.util.ModelPredicateProvider;
@@ -54,7 +53,8 @@ public class Items {
     //flower
     public static final PoopFlowerItem POOP_FLOWER_ITEM = new PoopFlowerItem(Blocks.POOP_FLOWER, new FabricItemSettings().group(ItemGroups.BLOCKS));
     //entity egg item
-    public static final Item POOP_CUBE_SPAWN_EGG = new SpawnEggItem(AllEntities.POOP_CUBE, 12885043, 12428647, new FabricItemSettings().group(ItemGroups.ITEMS));
+    public static final Item POOP_CUBE_SPAWN_EGG = new SpawnEggItem(Entities.POOP_CUBE, 12885043, 12428647, new FabricItemSettings().group(ItemGroups.ITEMS));
+    public static final Item Y_SLIME_SPAWN_EGG = new SpawnEggItem(Entities.Y_SLIME, 0xFF0009, 0x56FF1D, new FabricItemSettings().group(ItemGroups.ITEMS));
 
 
     public static void register() {
@@ -69,6 +69,7 @@ public class Items {
         POOP_FLUID_BUCKET = register("poop_fluid_bucket", Fluids.STILL_POOP_FLUID);
         //entity egg
         register("poop_cube_spawn_egg", POOP_CUBE_SPAWN_EGG);
+        register("y_slime_spawn_egg", Y_SLIME_SPAWN_EGG);
         //block item
         register("poop_block", POOP_BLOCK_ITEM);
         register("poop_slab", POOP_SLAB_ITEM);

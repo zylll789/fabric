@@ -1,6 +1,7 @@
 {
   "item.fabric_mod.poop": "Poop",
   "item.fabric_mod.poop_cube_spawn_egg": "Poop Cube Spawn Egg",
+  "item.fabric_mod.y_slime_spawn_egg": "Y Slime Spawn Egg",
   "item.fabric_mod.poop_fluid_bucket": "Poop Fluid Bucket",
   "item.fabric_mod.copy_item": "Copy Item",
   "item.fabric_mod.finished_book": "Finished Book",
@@ -62,6 +63,7 @@
   "block.fabric_mod.poop_crop": "Poop Crop",
 
   "entity.fabric_mod.poop_cube": "Poop Cube",
+  "entity.fabric_mod.y_slime": "Y Slime",
 
   "itemGroup.fabric_mod.items": "Fabric Mod Items",
   "itemGroup.fabric_mod.blocks": "Fabric Mod Blocks",
