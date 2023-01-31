@@ -86,5 +86,7 @@
   "item.fabric_mod.dowsing_rod.no_found": "Not found any appointed ore",
 
   "key.fabric_mod.weightless": "Weightless",
-  "key.categories.fabric_mod.all": "Keyboard Fabric Mod"
+  "key.categories.fabric_mod.all": "Keyboard Fabric Mod",
+
+  "enchantment.fabric_mod.thunder_sword_enchantment": "Thunder Sword Enchantment"
 }
