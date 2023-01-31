@@ -1,5 +1,5 @@
 {
-  "name": "fabric_mod:advanced_dungeon/third_road_random1",
+  "name": "fabric_mod:advanced_dungeon/forth_road_random1",
   "fallback": "minecraft:empty",
   "elements": [
     {
@@ -19,15 +19,16 @@
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
-    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "fabric_mod:advanced_dungeon/advanced_dungeon_long_channel1_2",
-        "processors": "minecraft:empty",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
     }
+//  ,
+//    {
+//      "weight": 1,
+//      "element": {
+//        "location": "fabric_mod:advanced_dungeon/advanced_dungeon_long_channel_2",
+//        "processors": "minecraft:empty",
+//        "projection": "rigid",
+//        "element_type": "minecraft:single_pool_element"
+//      }
+//    }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "fabric_mod:advanced_dungeon/third_room",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "fabric_mod:advanced_dungeon/advanced_dungeon_third_room",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
