@@ -6,7 +6,8 @@
   "mixins": [
     "CreeperEntityMixin",
     "EntityDataSaverMixin",
-    "StructureFeatureAccessor"
+    "StructureFeatureAccessor",
+    "WorldMixin"
   ],
   "client": [
     "BrewingMixin"
