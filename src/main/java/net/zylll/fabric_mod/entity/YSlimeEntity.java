@@ -7,11 +7,14 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.HostileEntity;
+import net.minecraft.entity.mob.PathAwareEntity;
+import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.zylll.fabric_mod.FabricMod;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -25,6 +28,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 public class YSlimeEntity extends HostileEntity implements IAnimatable {
 
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    public boolean isAttack = false;
 
     public YSlimeEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
@@ -41,15 +45,23 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
 
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(2, new WanderAroundPointOfInterestGoal(this, 0.5f, false));
-        this.goalSelector.add(3, new WanderAroundFarGoal(this, 0.5f, 1));
-        this.goalSelector.add(4, new LookAroundGoal(this));
-        this.goalSelector.add(5, new LookAtEntityGoal(this, PlayerEntity.class, 10f));
+        this.goalSelector.add(1, new Attack(this, 1, false));
+        this.goalSelector.add(4, new WanderAroundPointOfInterestGoal(this, 0.5f, false));
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.5f, 1));
+        this.goalSelector.add(6, new LookAroundGoal(this));
+        this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 10f));
+        this.targetSelector.add(2,new ActiveTargetGoal(this,PlayerEntity.class,true));
+        this.targetSelector.add(3, new ActiveTargetGoal(this, IronGolemEntity.class, true));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (this.isAttack) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.y_slime.attack"));
+            FabricMod.log("1");
+            return PlayState.CONTINUE;
+        }
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.y_slime.sneak"));
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.y_slime.attack"));
             return PlayState.CONTINUE;
         }
         event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.y_slime.idle"));
@@ -85,5 +97,29 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
     @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
         this.playSound(SoundEvents.ENTITY_SLIME_JUMP, 0.15f, 1.0f);
+    }
+
+    public static class Attack extends MeleeAttackGoal{
+
+        private YSlimeEntity mob;
+
+        public Attack(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
+            super(mob, speed, pauseWhenMobIdle);
+            this.mob= (YSlimeEntity) mob;
+        }
+
+        @Override
+        public void start() {
+            this.mob.isAttack = true;
+            FabricMod.log("222");
+            super.start();
+        }
+
+        @Override
+        public void stop() {
+            this.mob.isAttack = false;
+            FabricMod.log("333");
+            super.stop();
+        }
     }
 }

@@ -51,7 +51,7 @@ public class FabricMod implements ModInitializer {
 
         Dimensions.register();
 
-        Keys.register();
+//        Keys.register();
     }
 
     public static Identifier makeID(String id) {

@@ -60,5 +60,6 @@ public class FabricModClient implements ClientModInitializer {
                 0xC49C33));
         BlockRenderLayerMap.INSTANCE.putFluids(RenderLayer.getTranslucent(), Fluids.STILL_POOP_FLUID, Fluids.FLOWING_POOP_FLUID);
 
+        Keys.register();
     }
 }

@@ -16,6 +16,7 @@
 
   // If true, land will be add around the bottom of the structure. (Based on the starting piece's y value)
   "adapt_noise": true,
+  //"terrain_adaptation": "bury",
 
   // What mobs can spawn over time in the structure.
   // Make sure you add the mob to the right category (monster, creature, etc)

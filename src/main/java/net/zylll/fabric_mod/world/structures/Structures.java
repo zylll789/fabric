@@ -16,10 +16,11 @@ public class Structures {
      * use them too directly from the registries. It great for mod/datapacks compatibility.
      */
     public static StructureFeature<?> SKY_STRUCTURES = new SkyStructures();
+    public static StructureFeature<?> ADVANCED_DUNGEON = new AdvancedDungeonStructures();
 
     public static void registerStructureFeatures() {
-        // The generation step for when to generate the structure. there are 10 stages you can pick from!
         // This surface structure stage places the structure before plants and ores are generated.
         StructureFeatureAccessor.callRegister(FabricMod.MOD_ID + ":sky_structures", SKY_STRUCTURES, GenerationStep.Feature.SURFACE_STRUCTURES);
+        StructureFeatureAccessor.callRegister(FabricMod.MOD_ID + ":advanced_dungeon", ADVANCED_DUNGEON, GenerationStep.Feature.SURFACE_STRUCTURES);
     }
 }
