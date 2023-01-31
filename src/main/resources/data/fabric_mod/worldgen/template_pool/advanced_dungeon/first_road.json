@@ -1,0 +1,15 @@
+{
+  "name": "fabric_mod:advanced_dungeon/first_road",
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "location": "fabric_mod:advanced_dungeon/advanced_dungeon_long_channel",
+        "processors": "minecraft:empty",
+        "projection": "rigid",
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}
