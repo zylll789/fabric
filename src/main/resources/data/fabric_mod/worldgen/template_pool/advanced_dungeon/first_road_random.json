@@ -10,7 +10,8 @@
         "projection": "rigid",
         "element_type": "minecraft:single_pool_element"
       }
-    },
+    }
+//  ,
 //    {
 //      "weight": 0,
 //      "element": {
@@ -20,14 +21,14 @@
 //        "element_type": "minecraft:single_pool_element"
 //      }
 //    },
-    {
-      "weight": 1,
-      "element": {
-        "location": "fabric_mod:advanced_dungeon/advanced_dungeon_short_channel",
-        "processors": "minecraft:empty",
-        "projection": "rigid",
-        "element_type": "minecraft:single_pool_element"
-      }
-    }
+//    {
+//      "weight": 1,
+//      "element": {
+//        "location": "fabric_mod:advanced_dungeon/advanced_dungeon_short_channel",
+//        "processors": "minecraft:empty",
+//        "projection": "rigid",
+//        "element_type": "minecraft:single_pool_element"
+//      }
+//    }
   ]
 }

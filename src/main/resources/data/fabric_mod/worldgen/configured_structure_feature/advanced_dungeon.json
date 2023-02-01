@@ -8,7 +8,7 @@
 
     // This is how many pieces away from the starting piece a piece of the structure can spawn
     // Think of it like the length of the branch of the structure
-    "size": 12
+    "size": 40
   },
 
   // The biome tag to use for what biomes that this structure can spawn in"
