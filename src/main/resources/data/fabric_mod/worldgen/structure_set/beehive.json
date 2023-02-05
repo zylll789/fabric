@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "fabric_mod:beehive",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 169471314,
+    "spacing": 30,
+    "separation": 4,
+    "type": "minecraft:random_spread"
+  }
+}

@@ -22,7 +22,7 @@ public class PoopBlock extends Block{
         return false;
     }
 
-    private static final VoxelShape SHAPE = Block.createCuboidShape(0.0,0.0,0.0,16.0,15.0,16.0);
+    private static final VoxelShape SHAPE = Block.createCuboidShape(0.0,0.0,0.0,16.0,15.95,16.0);
 
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {

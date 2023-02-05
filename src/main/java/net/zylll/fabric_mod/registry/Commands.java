@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
 import net.zylll.fabric_mod.FabricMod;
 import net.zylll.fabric_mod.command.NBTCommand;
 import net.zylll.fabric_mod.command.HomeCommand;
+import net.zylll.fabric_mod.command.StructureSpawnCommand;
 
 public class Commands {
 
@@ -12,6 +13,7 @@ public class Commands {
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> NBTCommand.register(dispatcher));
         //CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> FakePlayerCommand.register(dispatcher));
         CommandRegistrationCallback.EVENT.register((dispatcher, dedicated) -> HomeCommand.register(dispatcher));
+        CommandRegistrationCallback.EVENT.register(((dispatcher, dedicated) -> StructureSpawnCommand.register(dispatcher)));
     }
 
 }

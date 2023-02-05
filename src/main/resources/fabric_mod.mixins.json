@@ -4,8 +4,10 @@
   "package": "net.zylll.fabric_mod.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ChunkMapAccessor",
     "CreeperEntityMixin",
     "EntityDataSaverMixin",
+    "SinglePoolElementAccessor",
     "StructureFeatureAccessor",
     "WorldMixin"
   ],

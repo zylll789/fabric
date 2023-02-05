@@ -19,7 +19,7 @@ public class Entities {
     public static final EntityType<PoopCube> POOP_CUBE = Registry.register(Registry.ENTITY_TYPE, makeID("poop_cube"),
             FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, PoopCube::new).dimensions(EntityDimensions.fixed(0.75F, 0.75F)).build());
     public static final EntityType<YSlimeEntity> Y_SLIME = Registry.register(Registry.ENTITY_TYPE,makeID("y_slime"),
-            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER,YSlimeEntity::new).dimensions(EntityDimensions.changing(1.6f,1f)).build());
+            FabricEntityTypeBuilder.create(SpawnGroup.MONSTER,YSlimeEntity::new).dimensions(EntityDimensions.fixed(1.6f,1f)).build());
 
     public static void register(){
         FabricMod.log("Register Entities for + " + FabricMod.MOD_ID);

@@ -6,6 +6,9 @@ import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
@@ -14,11 +17,11 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.zylll.fabric_mod.FabricMod;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.builder.ILoopType;
 import software.bernie.geckolib3.core.controller.AnimationController;
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -27,8 +30,8 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 public class YSlimeEntity extends HostileEntity implements IAnimatable {
 
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    public boolean isAttack = false;
+    private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    public static final TrackedData<Boolean> attack = DataTracker.registerData(YSlimeEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public YSlimeEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
@@ -43,34 +46,39 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 5);
     }
 
+    @Override
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(attack,false);
+    }
+
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
-        this.goalSelector.add(1, new Attack(this, 1, false));
-        this.goalSelector.add(4, new WanderAroundPointOfInterestGoal(this, 0.5f, false));
-        this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.5f, 1));
+        this.goalSelector.add(1, new Attack(this, 0.75, true));
+        this.goalSelector.add(4, new WanderAroundPointOfInterestGoal(this, 0.25f, false));
+        this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.25f, 1));
         this.goalSelector.add(6, new LookAroundGoal(this));
         this.goalSelector.add(6, new LookAtEntityGoal(this, PlayerEntity.class, 10f));
-        this.targetSelector.add(2,new ActiveTargetGoal(this,PlayerEntity.class,true));
-        this.targetSelector.add(3, new ActiveTargetGoal(this, IronGolemEntity.class, true));
+        this.targetSelector.add(2,new ActiveTargetGoal<>(this,PlayerEntity.class,true));
+        this.targetSelector.add(3, new ActiveTargetGoal<>(this, IronGolemEntity.class, true));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (this.isAttack) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.y_slime.attack"));
-            FabricMod.log("1");
-            return PlayState.CONTINUE;
-        }
+        YSlimeEntity ySlimeEntity = (YSlimeEntity) event.getAnimatable();
+        if (ySlimeEntity.dataTracker.get(attack)) {
+            event.getController().setAnimation((new AnimationBuilder()).addAnimation("animation.y_slime.attack", ILoopType.EDefaultLoopTypes.LOOP));
+        } else
         if (event.isMoving()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.y_slime.attack"));
-            return PlayState.CONTINUE;
+            event.getController().setAnimation((new AnimationBuilder()).addAnimation("animation.y_slime.sneak", ILoopType.EDefaultLoopTypes.LOOP));
+        } else {
+            event.getController().setAnimation((new AnimationBuilder()).addAnimation("animation.y_slime.idle", ILoopType.EDefaultLoopTypes.LOOP));
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.y_slime.idle"));
         return PlayState.CONTINUE;
     }
 
     @Override
     public void registerControllers(AnimationData animationData) {
-        animationData.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
+        animationData.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
     @Override
@@ -101,7 +109,7 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
 
     public static class Attack extends MeleeAttackGoal{
 
-        private YSlimeEntity mob;
+        private final YSlimeEntity mob;
 
         public Attack(PathAwareEntity mob, double speed, boolean pauseWhenMobIdle) {
             super(mob, speed, pauseWhenMobIdle);
@@ -110,15 +118,13 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
 
         @Override
         public void start() {
-            this.mob.isAttack = true;
-            FabricMod.log("222");
+            this.mob.dataTracker.set(attack, true);
             super.start();
         }
 
         @Override
         public void stop() {
-            this.mob.isAttack = false;
-            FabricMod.log("333");
+            this.mob.dataTracker.set(attack, false);
             super.stop();
         }
     }

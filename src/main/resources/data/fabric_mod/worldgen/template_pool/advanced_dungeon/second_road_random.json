@@ -1,6 +1,6 @@
 {
   "name": "fabric_mod:advanced_dungeon/second_road_random",
-  "fallback": "minecraft:empty",
+  "fallback": "fabric_mod:advanced_dungeon/second_road_random",
   "elements": [
 //    {
 //      "weight": 1,
