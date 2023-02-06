@@ -28,10 +28,14 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
+import java.util.EnumSet;
+import java.util.Random;
+
 public class YSlimeEntity extends HostileEntity implements IAnimatable {
 
     private final AnimationFactory factory = GeckoLibUtil.createFactory(this);
     public static final TrackedData<Boolean> attack = DataTracker.registerData(YSlimeEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
+    public static final TrackedData<Boolean> jumpMove = DataTracker.registerData(YSlimeEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
 
     public YSlimeEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
@@ -50,11 +54,13 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
     protected void initDataTracker() {
         super.initDataTracker();
         this.dataTracker.startTracking(attack,false);
+        this.dataTracker.startTracking(jumpMove,false);
     }
 
     protected void initGoals() {
         this.goalSelector.add(0, new SwimGoal(this));
         this.goalSelector.add(1, new Attack(this, 0.75, true));
+        this.goalSelector.add(4, new JumpMove(this, 0.45));
         this.goalSelector.add(4, new WanderAroundPointOfInterestGoal(this, 0.25f, false));
         this.goalSelector.add(5, new WanderAroundFarGoal(this, 0.25f, 1));
         this.goalSelector.add(6, new LookAroundGoal(this));
@@ -65,10 +71,12 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
         YSlimeEntity ySlimeEntity = (YSlimeEntity) event.getAnimatable();
+        ySlimeEntity.setNoGravity(false);
         if (ySlimeEntity.dataTracker.get(attack)) {
             event.getController().setAnimation((new AnimationBuilder()).addAnimation("animation.y_slime.attack", ILoopType.EDefaultLoopTypes.LOOP));
-        } else
-        if (event.isMoving()) {
+        } else if(ySlimeEntity.dataTracker.get(jumpMove)){
+            event.getController().setAnimation((new AnimationBuilder()).addAnimation("animation.y_slime.jumpMove", ILoopType.EDefaultLoopTypes.LOOP));
+        } else if (event.isMoving()) {
             event.getController().setAnimation((new AnimationBuilder()).addAnimation("animation.y_slime.sneak", ILoopType.EDefaultLoopTypes.LOOP));
         } else {
             event.getController().setAnimation((new AnimationBuilder()).addAnimation("animation.y_slime.idle", ILoopType.EDefaultLoopTypes.LOOP));
@@ -127,5 +135,35 @@ public class YSlimeEntity extends HostileEntity implements IAnimatable {
             this.mob.dataTracker.set(attack, false);
             super.stop();
         }
+    }
+
+    public static class JumpMove extends WanderAroundGoal{
+
+        private final YSlimeEntity mob;
+
+        public JumpMove(PathAwareEntity mob, double speed) {
+            super(mob, speed);
+            this.mob = (YSlimeEntity) mob;
+            this.setControls(EnumSet.of(Control.JUMP));
+        }
+
+        @Override
+        public void start() {
+            this.mob.dataTracker.set(jumpMove, true);
+            super.start();
+        }
+
+        @Override
+        public void stop() {
+            this.mob.dataTracker.set(jumpMove, false);
+            super.stop();
+        }
+
+        @Override
+        protected int getTickCount(int ticks) {
+            Random random = new Random();
+            return 20*random.nextInt(1,4);
+        }
+
     }
 }
